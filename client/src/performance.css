@@ -1,0 +1,33 @@
+/* Performance optimizations - Disable all animations for smoothness */
+
+/* Disable all framer-motion animations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove all animations globally for better performance */
+*,
+*::before,
+*::after {
+  animation-duration: 0ms !important;
+  animation-delay: 0ms !important;
+  transition-duration: 100ms !important;
+  transition-delay: 0ms !important;
+}
+
+/* Optimize scroll performance */
+* {
+  scroll-behavior: auto !important;
+}
+
+/* Disable will-change to prevent layout thrashing */
+* {
+  will-change: auto !important;
+}
+
+/* Only allow opacity transitions for basic fades */
+a, button {
+  transition: opacity 150ms, background-color 150ms, border-color 150ms, color 150ms !important;
+}
+
