@@ -1,19 +1,22 @@
-/* Performance optimizations - Disable all animations for smoothness */
+/* Performance optimizations - Disable scroll-triggered animations only */
 
-/* Disable all framer-motion animations */
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Remove all animations globally for better performance */
+/* Disable Framer Motion viewport animations while keeping hover/interaction animations */
+[data-projection-id] {
+  animation: none !important;
+  transform: none !important;
+}
+
+/* Keep CSS transitions fast but allow them */
 *,
 *::before,
 *::after {
   animation-duration: 0ms !important;
   animation-delay: 0ms !important;
-  transition-duration: 100ms !important;
-  transition-delay: 0ms !important;
 }
 
 /* Optimize scroll performance */
@@ -25,9 +28,3 @@
 * {
   will-change: auto !important;
 }
-
-/* Only allow opacity transitions for basic fades */
-a, button {
-  transition: opacity 150ms, background-color 150ms, border-color 150ms, color 150ms !important;
-}
-

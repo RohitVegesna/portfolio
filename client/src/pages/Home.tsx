@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import {
-  ArrowDown,
   ArrowUp,
   Code2,
   Database,
@@ -380,21 +379,6 @@ export default function Home() {
             </motion.div>
           </motion.div>
         </div>
-
-        {/* Down Arrow */}
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 -ml-1.5 text-muted-foreground"
-        >
-          <a
-            href="#stats"
-            className="inline-block cursor-pointer hover:text-primary transition-colors p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
-            aria-label="Scroll down to statistics section"
-          >
-            <ArrowDown className="w-6 h-6" />
-          </a>
-        </motion.div>
       </section>
 
       {/* Sticky Tabs */}
@@ -513,12 +497,8 @@ export default function Home() {
                 desc: "Using data and domain knowledge to guide decision-making. Analyzing test data for dashboards, identifying bottlenecks, and aligning test strategy with business goals. Making QA a strategic contributor to product success.",
               },
             ].map((pillar, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.15 }}
-                viewport={{ once: true }}
                 className="p-6 bg-muted/5 border border-white/10 rounded-xl hover:bg-muted/10 hover:border-primary/30 transition-all group"
               >
                 <div className="p-3 bg-primary/10 rounded-xl text-primary w-fit mb-4 group-hover:bg-primary/20 transition-colors">
@@ -530,7 +510,7 @@ export default function Home() {
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {pillar.desc}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
 
@@ -718,12 +698,8 @@ export default function Home() {
                 ],
               },
             ].map((item, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.15 }}
-                viewport={{ once: true }}
                 className="p-8 border border-white/10 rounded-xl bg-muted/5 hover:bg-muted/10 hover:border-primary/30 transition-all group"
               >
                 <div className="flex items-start gap-4 mb-4">
@@ -748,7 +724,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             ))}
           </div>
 
@@ -912,12 +888,8 @@ export default function Home() {
                 ],
               },
             ].map((item, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
                 className="p-6 border border-white/10 rounded-xl bg-muted/5 hover:bg-muted/10 hover:border-blue-500/30 transition-all group"
               >
                 <div className="flex items-center gap-4 mb-4">
@@ -954,7 +926,7 @@ export default function Home() {
                         </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             ))}
           </div>
 
@@ -1047,15 +1019,15 @@ export default function Home() {
 
             <Tabs defaultValue="microservices" className="w-full">
               <TabsList className="w-full h-auto flex flex-wrap justify-center gap-2 bg-muted/20 mb-8 p-2">
-                <TabsTrigger value="microservices" className="flex items-center gap-2 px-4 py-2 data-[state=active]:bg-green-500/20 data-[state=active]:text-green-400">
+                <TabsTrigger value="microservices" className="flex items-center gap-2 px-4 py-2 cursor-pointer data-[state=active]:bg-primary/10 data-[state=active]:text-foreground">
                   <Layers className="w-4 h-4" />
                   Microservices & Distributed
                 </TabsTrigger>
-                <TabsTrigger value="shift-left" className="flex items-center gap-2 px-4 py-2 data-[state=active]:bg-orange-500/20 data-[state=active]:text-orange-400">
+                <TabsTrigger value="shift-left" className="flex items-center gap-2 px-4 py-2 cursor-pointer data-[state=active]:bg-primary/10 data-[state=active]:text-foreground">
                   <CheckCircle2 className="w-4 h-4" />
                   Shift-Left Testing
                 </TabsTrigger>
-                <TabsTrigger value="test-strategy" className="flex items-center gap-2 px-4 py-2 data-[state=active]:bg-blue-500/20 data-[state=active]:text-blue-400">
+                <TabsTrigger value="test-strategy" className="flex items-center gap-2 px-4 py-2 cursor-pointer data-[state=active]:bg-primary/10 data-[state=active]:text-foreground">
                   <BookOpen className="w-4 h-4" />
                   Test Strategy & Process
                 </TabsTrigger>
@@ -1121,12 +1093,8 @@ export default function Home() {
                     ],
                   },
                 ].map((item, index) => (
-                  <motion.div
+                  <div
                     key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    viewport={{ once: true }}
                     className="p-6 border border-white/10 rounded-xl bg-muted/5 hover:bg-muted/10 hover:border-green-500/30 transition-all group"
                   >
                     <div className="flex items-center gap-4 mb-4">
@@ -1152,7 +1120,7 @@ export default function Home() {
                         </Badge>
                       ))}
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
 
@@ -1262,12 +1230,8 @@ export default function Home() {
                     ],
                   },
                 ].map((item, index) => (
-                  <motion.div
+                  <div
                     key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    viewport={{ once: true }}
                     className="p-6 border border-white/10 rounded-xl bg-muted/5 hover:bg-muted/10 hover:border-orange-500/30 transition-all group"
                   >
                     <div className="flex items-center gap-4 mb-4">
@@ -1292,7 +1256,7 @@ export default function Home() {
                         </li>
                       ))}
                     </ul>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
 
@@ -1399,12 +1363,8 @@ export default function Home() {
                     ],
                   },
                 ].map((item, index) => (
-                  <motion.div
+                  <div
                     key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    viewport={{ once: true }}
                     className="p-6 border border-white/10 rounded-xl bg-muted/5 hover:bg-muted/10 hover:border-blue-500/30 transition-all group"
                   >
                     <div className="flex items-center gap-4 mb-4">
@@ -1429,7 +1389,7 @@ export default function Home() {
                         </li>
                       ))}
                     </ul>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>
