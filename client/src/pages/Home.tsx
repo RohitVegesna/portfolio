@@ -79,7 +79,7 @@ function ExperienceSection({ fadeInUp }: { fadeInUp: any }) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
+            transition={{ delay: index * 0.05 }}
             className="flex flex-col items-center gap-6 p-8 border border-white/10 rounded-2xl hover:bg-muted/5 hover:border-primary/30 transition-all w-full group"
           >
             <div
@@ -109,11 +109,7 @@ function ExperienceSection({ fadeInUp }: { fadeInUp: any }) {
       </div>
 
       {/* Awards & Recognition */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.4 }}
+      <div
         className="mt-16 p-8 border border-primary/20 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent max-w-5xl mx-auto"
       >
         <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
@@ -172,7 +168,7 @@ function ExperienceSection({ fadeInUp }: { fadeInUp: any }) {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }
@@ -267,7 +263,7 @@ export default function Home() {
       {/* Hero Section */}
       <section
         id="hero"
-        className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-8 pb-12"
+        className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-8 pb-12"
       >
         {/* Background */}
         <div className="absolute inset-0 z-0">
@@ -466,7 +462,7 @@ export default function Home() {
 
       {/* Core Expertise */}
       <section id="about" className="py-2 container mx-auto px-4">
-        <motion.div {...fadeInUp} className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-12 flex items-center gap-4 justify-center">
             <span className="w-16 h-[2px] bg-gradient-to-r from-transparent to-primary"></span>
             Core Expertise
@@ -514,11 +510,7 @@ export default function Home() {
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+          <div
             className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-purple-500/5 to-blue-500/10 border border-primary/30 rounded-3xl p-12 backdrop-blur-sm group hover:border-primary/50 transition-all duration-500"
           >
             {/* Animated background elements */}
@@ -531,11 +523,7 @@ export default function Home() {
 
             <div className="relative z-10">
               <div className="flex items-start justify-between mb-8">
-                <motion.div
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
+                <div
                   className="text-primary/40 group-hover:text-primary/60 transition-colors duration-500"
                 >
                   <svg
@@ -545,27 +533,15 @@ export default function Home() {
                   >
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg>
-                </motion.div>
+                </div>
                 <div className="h-1 w-24 bg-gradient-to-r from-primary/50 to-transparent rounded-full"></div>
               </div>
 
               <div className="space-y-4">
-                <motion.p
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4 }}
-                  className="text-2xl md:text-4xl font-display font-bold text-foreground leading-tight"
-                >
+                <p className="text-2xl md:text-4xl font-display font-bold text-foreground leading-tight">
                   Test automation isn't just code
-                </motion.p>
-                <motion.p
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5 }}
-                  className="text-xl md:text-2xl text-muted-foreground leading-relaxed"
-                >
+                </p>
+                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
                   — it's{" "}
                   <span className="relative inline-block">
                     <span className="relative z-10 text-primary font-bold px-3 py-1">
@@ -574,14 +550,10 @@ export default function Home() {
                     <span className="absolute inset-0 bg-primary/20 blur-xl rounded-lg"></span>
                   </span>
                   , wrapped in logic.
-                </motion.p>
+                </p>
               </div>
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.7 }}
+              <div
                 className="mt-8 flex items-center gap-3"
               >
                 <div className="h-px flex-1 bg-gradient-to-r from-primary/30 via-primary/10 to-transparent"></div>
@@ -590,10 +562,10 @@ export default function Home() {
                   <div className="w-1.5 h-1.5 rounded-full bg-primary/40"></div>
                   <div className="w-1 h-1 rounded-full bg-primary/20"></div>
                 </div>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </section>
       </div></TabsContent>
 
@@ -1421,7 +1393,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
+              transition={{ delay: 0.05 }}
               viewport={{ once: true }}
               className="text-center p-4 bg-primary/5 border border-primary/20 rounded-xl"
             >
