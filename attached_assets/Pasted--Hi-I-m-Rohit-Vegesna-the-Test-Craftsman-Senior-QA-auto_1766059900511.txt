@@ -1,0 +1,137 @@
+
+Hi, I'm Rohit Vegesna
+the Test Craftsman! 
+Senior QA automation developer | .NET Specialist 
+Crafting scalable test automation frameworks for web, API, and cloud-based applications 
+
+
+11+ Years Exp.
+
+Across global enterprises, consulting environments, and product-based companies. 
+
+1500+ Test Cases
+
+Robust coverage across UI, API, and integration layers. 
+
+CI/CD expert 
+
+Built scalable pipelines and custom test frameworks from the ground up. 
+
+Quality mindset
+
+Delivering clean releases through strategy, scripting, and data-driven testing.
+
+
+Test automation isn't just code — it's trust, speed, and peace of mind, wrapped in logic. 
+🏆 Quality-Driven Philosophy 
+
+I believe in embedding quality at every stage of the software lifecycle — not just as a final check, but as a guiding principle. My goal is to ensure robust, scalable, and maintainable solutions that make quality measurable, consistent, and deeply integrated into delivery pipelines. 
+
+🤖 Automation as a Functional Force 
+
+With a strong foundation in CI/CD, custom test frameworks, and end-to-end automation, I focus on driving speed, reliability, and test coverage. From UI and API layers to backend systems, I build automation that enables teams to deliver with confidence — and scale with ease. 
+
+🧠 Analytical Impact & Business Alignment 
+
+Beyond testing, I use data and domain knowledge to guide decision-making. Whether it's analyzing test data for dashboards, identifying bottlenecks, or aligning test strategy with business goals, I strive to make QA a strategic contributor to product and customer success
+
+Technology Ecosystem 
+Core Technologies & Tools
+
+C#
+
+
+CircleCi
+
+.Net Core
+
+
+Github
+
+.Net framework
+
+Git Actions
+
+Mongo Db
+
+
+TeamCity
+
+MSSQL
+
+
+Azure devops
+
+Postgres SQL
+
+Sonar Qube
+
+TypeScript
+
+
+Argo CD
+
+Xml
+
+
+Visual studio
+
+Yaml
+
+
+VS Code
+
+PowerShell
+
+
+Kubernetes
+
+NuGet
+
+
+Docker
+Test Automation Stack
+
+XUnit
+
+MS Test
+
+NUnit
+
+Win Ui Automation
+
+Reqenroll
+
+Cucumber
+
+Selenium
+
+Cypress
+
+Restsharp
+
+
+JMeter
+
+
+Postman
+Collaboration & Reporting Tools
+
+Jira
+
+Confluence
+
+Xray
+Where I’ve made an impact 
+
+Flexera
+
+Ericsson
+
+Tata Consultancy Services
+Let’s Connect 
+📧 Email: rohitkumar.vegesna@outlook.com
+💼 LinkedIn: https://www.linkedin.com/in/rohitvegesna/
+
+
+Made with Google Sites
