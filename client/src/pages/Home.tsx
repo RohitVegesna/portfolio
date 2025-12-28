@@ -382,16 +382,16 @@ export default function Home() {
         <div className="container mx-auto px-4 py-4">
           <Tabs defaultValue="overview" className="w-full">
             <TabsList className="w-full h-auto flex flex-wrap justify-center gap-2 bg-transparent">
-              <TabsTrigger value="overview" className="flex items-center gap-2 px-6 py-3 text-base data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              <TabsTrigger value="overview" className="flex items-center gap-2 px-6 py-3 text-base cursor-pointer data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 <Eye className="w-4 h-4" />Overview
               </TabsTrigger>
-              <TabsTrigger value="testing" className="flex items-center gap-2 px-6 py-3 text-base data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              <TabsTrigger value="testing" className="flex items-center gap-2 px-6 py-3 text-base cursor-pointer data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 <TestTube2 className="w-4 h-4" />Testing & Automation
               </TabsTrigger>
-              <TabsTrigger value="technology" className="flex items-center gap-2 px-6 py-3 text-base data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              <TabsTrigger value="technology" className="flex items-center gap-2 px-6 py-3 text-base cursor-pointer data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 <Wrench className="w-4 h-4" />Technology Stack
               </TabsTrigger>
-              <TabsTrigger value="experience" className="flex items-center gap-2 px-6 py-3 text-base data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              <TabsTrigger value="experience" className="flex items-center gap-2 px-6 py-3 text-base cursor-pointer data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 <Award className="w-4 h-4" />Experience
               </TabsTrigger>
             </TabsList>
