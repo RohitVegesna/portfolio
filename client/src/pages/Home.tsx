@@ -451,7 +451,7 @@ export default function Home() {
 
       {/* Core Expertise */}
       <section id="about" className="py-2 container mx-auto px-4">
-        <motion.div {...fadeInUp} className="max-w-5xl mx-auto">
+        <motion.div {...fadeInUp} className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-12 flex items-center gap-4 justify-center">
             <span className="w-16 h-[2px] bg-gradient-to-r from-transparent to-primary"></span>
             Core Expertise
@@ -593,7 +593,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-purple-500/5 pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background to-transparent pointer-events-none" />
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-blue-500/5 via-transparent to-transparent pointer-events-none" />
-        <motion.div {...fadeInUp} className="max-w-6xl mx-auto container px-4 relative z-10">
+        <motion.div {...fadeInUp} className="max-w-6xl mx-auto container">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 flex items-center gap-4 justify-center">
             <span className="w-16 h-[2px] bg-gradient-to-r from-transparent via-violet-500 to-purple-500"></span>
             AI-Powered Testing & Automation
@@ -746,9 +746,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-purple-500/5 via-transparent to-transparent pointer-events-none" />
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-green-500/5 via-transparent to-transparent pointer-events-none" />
-        <motion.div
-          {...fadeInUp}
-          className="max-w-5xl mx-auto container px-4 relative z-10"
+        <div className="container mx-auto px-4 relative z-10">
+            <motion.div {...fadeInUp} className="max-w-6xl mx-auto container"
         >
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 flex items-center gap-4 justify-center">
             <span className="w-16 h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-cyan-500"></span>
@@ -763,7 +762,7 @@ export default function Home() {
             systems testing.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {[
               {
                 icon: Code2,
@@ -846,12 +845,16 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="p-6 border border-white/10 rounded-xl bg-muted/5 hover:bg-muted/10 hover:border-blue-500/30 transition-all group"
               >
-                <div className="p-3 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-lg text-blue-500 w-fit mb-4 group-hover:from-blue-500/20 group-hover:to-cyan-500/20 transition-all">
-                  <item.icon className="w-6 h-6" />
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-lg text-blue-500 group-hover:from-blue-500/20 group-hover:to-cyan-500/20 transition-all flex-shrink-0">
+                    <item.icon className="w-6 h-6" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-foreground mb-2">
+                      {item.title}
+                    </h3>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">
-                  {item.title}
-                </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   {item.desc}
                 </p>
@@ -868,12 +871,12 @@ export default function Home() {
                 <ul className="space-y-1">
                   {item.highlights.map((highlight, i) => (
                     <li
-                      key={i}
-                      className="flex items-start gap-2 text-xs text-muted-foreground"
-                    >
-                      <div className="w-1 h-1 rounded-full bg-primary/60 flex-shrink-0 mt-1.5"></div>
-                      {highlight}
-                    </li>
+                          key={i}
+                          className="flex items-start gap-2 text-xs text-muted-foreground"
+                        >
+                          <div className="w-1 h-1 rounded-full bg-primary flex-shrink-0 mt-1.5"></div>
+                          {highlight}
+                        </li>
                   ))}
                 </ul>
               </motion.div>
@@ -936,6 +939,8 @@ export default function Home() {
             </div>
           </div>
         </motion.div>
+        </div>
+        
       </section>
 
       {/* Advanced Testing */}
@@ -1187,9 +1192,9 @@ export default function Home() {
                       {item.highlights.map((highlight, i) => (
                         <li
                           key={i}
-                          className="flex items-center gap-2 text-sm text-muted-foreground"
+                          className="flex items-start gap-2 text-xs text-muted-foreground"
                         >
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></div>
+                          <div className="w-1 h-1 rounded-full bg-primary flex-shrink-0 mt-1.5"></div>
                           {highlight}
                         </li>
                       ))}
@@ -1327,9 +1332,9 @@ export default function Home() {
                       {item.highlights.map((highlight, i) => (
                         <li
                           key={i}
-                          className="flex items-start gap-2 text-sm text-muted-foreground"
+                          className="flex items-start gap-2 text-xs text-muted-foreground"
                         >
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-1.5"></div>
+                          <div className="w-1 h-1 rounded-full bg-primary flex-shrink-0 mt-1.5"></div>
                           {highlight}
                         </li>
                       ))}
