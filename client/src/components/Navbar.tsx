@@ -19,9 +19,13 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("");
   const [showAdvancedDropdown, setShowAdvancedDropdown] = useState(false);
   const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [isScrollingToTop, setIsScrollingToTop] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
+      // Don't update active section while scrolling to top
+      if (isScrollingToTop) return;
+      
       setShowScrollTop(window.scrollY > 400);
 
       // Detect active section based on which section is most visible in viewport
@@ -37,6 +41,20 @@ export default function Navbar() {
         "experience",
         "contact",
       ];
+
+      // Check if we're before the first section (About)
+      const aboutElement = document.getElementById("about");
+      if (aboutElement) {
+        const aboutTop = aboutElement.offsetTop;
+        const navbarHeight = 100;
+        
+        // If we haven't reached the About section yet, clear active section
+        if (window.scrollY + navbarHeight < aboutTop) {
+          setActiveSection("");
+          return;
+        }
+      }
+
       const viewportMiddle = window.scrollY + window.innerHeight / 3; // Check top third of viewport
 
       let currentSection = "";
@@ -55,23 +73,37 @@ export default function Navbar() {
       }
 
       setActiveSection(currentSection);
-
-      // If at the very top, clear active section
-      if (window.scrollY < 100) {
-        setActiveSection("");
-      }
     };
 
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // Call once on mount
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isScrollingToTop]);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    setIsScrollingToTop(true);
+    setActiveSection("");
+    
+    // Force scroll to absolute top
+    const scrollToTopPosition = () => {
+      window.scrollTo({ 
+        top: 0, 
+        left: 0,
+        behavior: "smooth" 
+      });
+    };
+    
+    scrollToTopPosition();
+    
+    // Re-enable scroll detection after scroll completes (longer timeout for far sections)
+    setTimeout(() => {
+      setIsScrollingToTop(false);
+    }, 2000);
   };
 
   const scrollToSection = (sectionId: string) => {
+    setIsScrollingToTop(true); // Disable scroll detection during section navigation
+    
     const element = document.getElementById(sectionId);
     if (element) {
       const navbarHeight = 100; // Approximate navbar height
@@ -86,6 +118,11 @@ export default function Navbar() {
     }
     setShowAdvancedDropdown(false);
     if (dropdownTimeout) clearTimeout(dropdownTimeout);
+    
+    // Re-enable scroll detection
+    setTimeout(() => {
+      setIsScrollingToTop(false);
+    }, 1000);
   };
 
   const handleMouseEnter = () => {
