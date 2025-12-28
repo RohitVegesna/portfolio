@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import {
   ArrowDown,
+  ArrowUp,
   Code2,
   Database,
   Smartphone,
@@ -26,11 +27,16 @@ import {
   Globe,
   Calendar,
   Briefcase,
+  Eye,
+  Wrench,
+  Award,
 } from "lucide-react";
-import Navbar from "@/components/Navbar";
 import heroBg from "@assets/generated_images/modern_tech_gradient_abstract_background.png";
 import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import resumePdf from "@assets/ROHIT_VEGESNA_Resume_v3_1766689085122.pdf";
+import { useState, useEffect } from "react";
 
 function ExperienceSection({ fadeInUp }: { fadeInUp: any }) {
   return (
@@ -173,19 +179,26 @@ function ExperienceSection({ fadeInUp }: { fadeInUp: any }) {
 }
 
 export default function Home() {
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 500);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.6 },
+    // Disabled viewport triggering for better performance
   };
 
   const stagger = {
-    whileInView: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
+    // Disabled for performance
   };
 
   const coreTools = [
@@ -252,12 +265,10 @@ export default function Home() {
       id="main"
       className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans selection:bg-primary selection:text-primary-foreground"
     >
-      <Navbar />
-
       {/* Hero Section */}
       <section
         id="hero"
-        className="relative min-h-[75vh] flex items-center justify-center overflow-hidden pt-16 pb-12"
+        className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-8 pb-12"
       >
         {/* Background */}
         <div className="absolute inset-0 z-0">
@@ -386,6 +397,26 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* Sticky Tabs */}
+      <div className="sticky top-0 z-20 bg-background/95 backdrop-blur-sm border-b border-white/10 shadow-lg">
+        <div className="container mx-auto px-4 py-4">
+          <Tabs defaultValue="overview" className="w-full">
+            <TabsList className="w-full h-auto flex flex-wrap justify-center gap-2 bg-transparent">
+              <TabsTrigger value="overview" className="flex items-center gap-2 px-6 py-3 text-base data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                <Eye className="w-4 h-4" />Overview
+              </TabsTrigger>
+              <TabsTrigger value="testing" className="flex items-center gap-2 px-6 py-3 text-base data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                <TestTube2 className="w-4 h-4" />Testing & Automation
+              </TabsTrigger>
+              <TabsTrigger value="technology" className="flex items-center gap-2 px-6 py-3 text-base data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                <Wrench className="w-4 h-4" />Technology Stack
+              </TabsTrigger>
+              <TabsTrigger value="experience" className="flex items-center gap-2 px-6 py-3 text-base data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                <Award className="w-4 h-4" />Experience
+              </TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="overview" className="mt-0"><div>
       {/* Stats */}
       <section id="stats" className="py-16 bg-muted/10 border-y border-white/5">
         <div className="container px-4 max-w-6xl mx-auto">
@@ -584,16 +615,51 @@ export default function Home() {
           </motion.div>
         </motion.div>
       </section>
+      </div></TabsContent>
 
+            <TabsContent value="testing" className="mt-0"><div>
+      
+      <div className="container mx-auto px-4 py-8">
+        <p className="text-lg text-muted-foreground text-center mb-8 max-w-3xl mx-auto">
+          Comprehensive testing expertise spanning AI-powered automation, multi-layer frameworks, distributed systems, and shift-left strategies. Expand sections below to explore each area.
+        </p>
+        
+        <Accordion 
+          type="single" 
+          collapsible 
+          className="w-full space-y-4"
+          onValueChange={(value) => {
+            if (value) {
+              requestAnimationFrame(() => {
+                const trigger = document.querySelector(`[data-state="open"]`)?.closest('[data-accordion-item]')?.querySelector('[data-radix-collection-item]');
+                if (trigger) {
+                  const triggerRect = trigger.getBoundingClientRect();
+                  const isAboveViewport = triggerRect.top < 100;
+                  
+                  if (isAboveViewport) {
+                    trigger.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }
+              });
+            }
+          }}
+        >
+          <AccordionItem value="ai-testing" className="border-0 overflow-hidden scroll-mt-20" data-accordion-item style={{overflowAnchor: 'none'}}>
+            <div className="relative bg-gradient-to-br from-violet-500/5 to-purple-500/5 rounded-xl">
+              <AccordionTrigger className="text-xl font-bold hover:text-primary px-6 py-6 border border-white/10 rounded-xl hover:border-violet-500/30 transition-colors">
+                <div className="flex items-center gap-3">
+                  <Sparkles className="w-6 h-6 text-violet-500" />
+                  AI-Powered Testing & Automation
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="px-0">
       {/* AI-Assisted Testing */}
       <section
         id="ai-testing"
-        className="py-20 relative"
+        className="py-12 relative"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-purple-500/5 pointer-events-none" />
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-blue-500/5 via-transparent to-transparent pointer-events-none" />
-        <motion.div {...fadeInUp} className="max-w-6xl mx-auto container">
+        <div className="container mx-auto px-6">
+        <motion.div {...fadeInUp} className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 flex items-center gap-4 justify-center">
             <span className="w-16 h-[2px] bg-gradient-to-r from-transparent via-violet-500 to-purple-500"></span>
             AI-Powered Testing & Automation
@@ -739,16 +805,25 @@ export default function Home() {
             </div>
           </div>
         </motion.div>
+        </div>
       </section>
+            </AccordionContent>
+            </div>
+          </AccordionItem>
 
+          <AccordionItem value="foundation" className="border-0 overflow-hidden scroll-mt-20" data-accordion-item style={{overflowAnchor: 'none'}}>
+            <div className="relative bg-gradient-to-br from-blue-500/5 to-cyan-500/5 rounded-xl">
+              <AccordionTrigger className="text-xl font-bold hover:text-primary px-6 py-6 border border-white/10 rounded-xl hover:border-blue-500/30 transition-colors">
+                <div className="flex items-center gap-3">
+                  <TestTube2 className="w-6 h-6 text-blue-500" />
+                  Foundation: Multi-Layer Testing
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="px-0">
       {/* Foundation: Multi-Layer Testing */}
-      <section id="foundation" className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 pointer-events-none" />
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-purple-500/5 via-transparent to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-green-500/5 via-transparent to-transparent pointer-events-none" />
-        <div className="container mx-auto px-4 relative z-10">
-            <motion.div {...fadeInUp} className="max-w-6xl mx-auto container"
-        >
+      <section id="foundation" className="py-12 relative">
+        <div className="container mx-auto px-6 relative z-10">
+            <motion.div {...fadeInUp} className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 flex items-center gap-4 justify-center">
             <span className="w-16 h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-cyan-500"></span>
             Foundation: Multi-Layer Testing
@@ -942,32 +1017,53 @@ export default function Home() {
         </div>
         
       </section>
+            </AccordionContent>
+            </div>
+          </AccordionItem>
 
+          <AccordionItem value="advanced-testing" className="border-0 overflow-hidden scroll-mt-20" data-accordion-item style={{overflowAnchor: 'none'}}>
+            <div className="relative bg-gradient-to-br from-green-500/5 to-orange-500/5 rounded-xl">
+              <AccordionTrigger className="text-xl font-bold hover:text-primary px-6 py-6 border border-white/10 rounded-xl hover:border-green-500/30 transition-colors">
+                <div className="flex items-center gap-3">
+                  <Network className="w-6 h-6 text-green-500" />
+                  Advanced Testing Strategies
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="px-0">
       {/* Advanced Testing */}
-      <section id="advanced-testing" className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-orange-500/5 pointer-events-none" />
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-green-500/5 via-transparent to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none" />
-        <div className="container mx-auto px-4 relative z-10">
+      <section id="advanced-testing" className="py-12 relative">
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div {...fadeInUp} className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 flex items-center gap-4 justify-center">
               <span className="w-16 h-[2px] bg-gradient-to-r from-transparent via-green-500 to-emerald-500"></span>
               Advanced Testing Strategies
               <Network className="w-10 h-10 text-green-500" />
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-16 text-center max-w-4xl mx-auto">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-12 text-center max-w-4xl mx-auto">
               Architecting comprehensive testing solutions for complex
               distributed systems and implementing shift-left strategies to
               catch issues early in the development cycle.
             </p>
 
+            <Tabs defaultValue="microservices" className="w-full">
+              <TabsList className="w-full h-auto flex flex-wrap justify-center gap-2 bg-muted/20 mb-8 p-2">
+                <TabsTrigger value="microservices" className="flex items-center gap-2 px-4 py-2 data-[state=active]:bg-green-500/20 data-[state=active]:text-green-400">
+                  <Layers className="w-4 h-4" />
+                  Microservices & Distributed
+                </TabsTrigger>
+                <TabsTrigger value="shift-left" className="flex items-center gap-2 px-4 py-2 data-[state=active]:bg-orange-500/20 data-[state=active]:text-orange-400">
+                  <CheckCircle2 className="w-4 h-4" />
+                  Shift-Left Testing
+                </TabsTrigger>
+                <TabsTrigger value="test-strategy" className="flex items-center gap-2 px-4 py-2 data-[state=active]:bg-blue-500/20 data-[state=active]:text-blue-400">
+                  <BookOpen className="w-4 h-4" />
+                  Test Strategy & Process
+                </TabsTrigger>
+              </TabsList>
+
+              <TabsContent value="microservices" className="mt-0">
             {/* Microservices & Distributed Systems Subsection */}
-            <div id="microservices" className="mb-20">
-              <h3 className="text-2xl md:text-3xl font-display font-bold mb-3 flex items-center gap-3 justify-center">
-                <span className="w-12 h-[2px] bg-gradient-to-r from-transparent to-green-500"></span>
-                Microservices & Distributed Systems
-                <span className="w-12 h-[2px] bg-gradient-to-l from-transparent to-green-500"></span>
-              </h3>
+            <div id="microservices">
               <p className="text-muted-foreground leading-relaxed mb-8 text-center max-w-3xl mx-auto">
                 Validating complex, event-driven microservice ecosystems with
                 comprehensive end-to-end testing strategies that ensure
@@ -1097,14 +1193,11 @@ export default function Home() {
                 </div>
               </div>
             </div>
+              </TabsContent>
 
+              <TabsContent value="shift-left" className="mt-0">
             {/* Shift-Left Testing Subsection */}
             <div id="shift-left">
-              <h3 className="text-2xl md:text-3xl font-display font-bold mb-3 flex items-center gap-3 justify-center">
-                <span className="w-12 h-[2px] bg-gradient-to-r from-transparent to-orange-500"></span>
-                Shift-Left Testing Strategy
-                <span className="w-12 h-[2px] bg-gradient-to-l from-transparent to-orange-500"></span>
-              </h3>
               <p className="text-muted-foreground leading-relaxed mb-8 text-center max-w-3xl mx-auto">
                 Embedding quality validation early in the development cycle
                 through pre-merge testing, CI/CD integration, and automated
@@ -1263,14 +1356,11 @@ export default function Home() {
                 </div>
               </div>
             </div>
+              </TabsContent>
 
+              <TabsContent value="test-strategy" className="mt-0">
             {/* Test Strategy & Process Excellence Subsection */}
-            <div id="test-strategy" className="mt-20">
-              <h3 className="text-2xl md:text-3xl font-display font-bold mb-3 flex items-center gap-3 justify-center">
-                <span className="w-12 h-[2px] bg-gradient-to-r from-transparent to-blue-500"></span>
-                Test Strategy & Process Excellence
-                <span className="w-12 h-[2px] bg-gradient-to-l from-transparent to-blue-500"></span>
-              </h3>
+            <div id="test-strategy">
               <p className="text-muted-foreground leading-relaxed mb-8 text-center max-w-3xl mx-auto">
                 Establishing quality processes, creating comprehensive documentation, and designing system architecture diagrams that enable effective testing strategies across teams.
               </p>
@@ -1343,10 +1433,20 @@ export default function Home() {
                 ))}
               </div>
             </div>
+              </TabsContent>
+            </Tabs>
           </motion.div>
         </div>
       </section>
+            </AccordionContent>
+            </div>
+          </AccordionItem>
+        </Accordion>
+      </div>
+      
+      </div></TabsContent>
 
+            <TabsContent value="technology" className="mt-0"><div>
       {/* Technology Ecosystem */}
       <section id="tools" className="py-20 bg-muted/5 border-y border-white/5">
         <motion.div {...fadeInUp} className="max-w-6xl mx-auto container px-4">
@@ -1561,9 +1661,15 @@ export default function Home() {
           </motion.div>
         </motion.div>
       </section>
+      </div></TabsContent>
 
+            <TabsContent value="experience" className="mt-0"><div>
       {/* Experience */}
       <ExperienceSection fadeInUp={fadeInUp} />
+      </div></TabsContent>
+          </Tabs>
+        </div>
+      </div>
 
       {/* Footer / Contact */}
       <footer id="contact" className="py-20 container mx-auto px-4 text-center">
@@ -1625,6 +1731,17 @@ export default function Home() {
           </div>
         </motion.div>
       </footer>
+
+      {/* Back to Top */}
+      {showBackToTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 z-50 p-4 bg-primary text-primary-foreground rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+          aria-label="Scroll to top"
+        >
+          <ArrowUp className="w-6 h-6" />
+        </button>
+      )}
     </div>
   );
 }
