@@ -1563,8 +1563,7 @@ export default function Home() {
               <Sparkles className="w-3.5 h-3.5 text-primary/70" />
               <span>
                 Crafted with <span className="text-foreground font-medium">human creativity & vision</span>,{" "}
-                powered by <span className="text-primary font-medium">Copilot</span> &{" "}
-                <span className="text-primary font-medium">Replit</span> for flawless execution
+                powered by <span className="text-primary font-medium">GitHub Copilot</span> for flawless execution
               </span>
               <Sparkles className="w-3.5 h-3.5 text-primary/70" />
             </p>
