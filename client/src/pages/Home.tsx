@@ -29,6 +29,7 @@ import {
   Eye,
   Wrench,
   Award,
+  Quote,
 } from "lucide-react";
 import heroBg from "@assets/generated_images/modern_tech_gradient_abstract_background.png";
 import { Badge } from "@/components/ui/badge";
@@ -990,6 +991,168 @@ export default function Home() {
           </Tabs>
         </div>
       </div>
+
+      {/* Testimonials Section - Auto-scrolling */}
+      <section className="py-20 bg-muted/5 border-y border-white/5 overflow-hidden">
+        <div className="container mx-auto px-4 mb-12">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl md:text-4xl font-display font-bold text-center mb-4"
+          >
+            What People Say
+          </motion.h2>
+          <p className="text-center text-muted-foreground max-w-2xl mx-auto">
+            Recommendations from colleagues and leaders I've worked with
+          </p>
+        </div>
+
+        {/* Auto-scrolling container */}
+        <div className="relative">
+          {/* Gradient fade edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+          
+          {/* Scrolling testimonials */}
+          <div className="flex gap-6 animate-scroll-testimonials hover:pause-animation">
+            {/* First set of testimonials */}
+            {[
+              {
+                quote: "Rohit is a highly talented professional who's worked hard and within no time he's made a mark for himself as very innovative problem solver. We've worked in the same project in TCS during 2014-2017 and his skilled approach in dealing with various challenges in Operations, handling customers and other stake holders in IT Management and later as an Automation Developer have been well regarded.",
+                name: "Murali Krishna Chaturvedi",
+                title: "Lead Quality Assurance - Performance & System Integration",
+                company: "Nasdaq",
+                gradient: "from-blue-500/10 via-cyan-500/5 to-transparent",
+                border: "border-blue-500/20",
+              },
+              {
+                quote: "I had the pleasure of working with Rohit for 4 years. I rarely come across real package of ('hard-work' + 'commitment' + 'quick-learn' + 'zeal') who stand out like Rohit. Rohit's ability to handle the pressure situation was unlike any I've seen before and made a dramatic increase in the productivity and good-will of our deliverables. As a team member or a leader, Rohit earns my highest recommendation.",
+                name: "Deepak Kamarsu",
+                title: "Sr. Data Scientist / Machine Learning Engineer",
+                company: "Telia",
+                gradient: "from-green-500/10 via-emerald-500/5 to-transparent",
+                border: "border-green-500/20",
+              },
+              {
+                quote: "He is one of the guy whom one can rely on delivering the project ontime with high quality. Though he was new to team within short span of time he made his mark and created visibility across the division. It's not just the task that was assigned but he goes beyond and adds value to make sure to have higher customer satisfaction. If I ever get a chance I would love to work with him.",
+                name: "Harish Ketha",
+                title: "Senior Manager",
+                company: "Tinuiti",
+                gradient: "from-violet-500/10 via-purple-500/5 to-transparent",
+                border: "border-violet-500/20",
+              },
+              {
+                quote: "Have worked with Rohit right from the day he joined as a fresher. A hard working guy with immense knowledge and extreme capabilities. He excels in any role that he is assigned.",
+                name: "Sony Malathkar",
+                title: "Agile Product Owner",
+                company: "Swedbank",
+                gradient: "from-orange-500/10 via-amber-500/5 to-transparent",
+                border: "border-orange-500/20",
+              },
+              {
+                quote: "I indirectly worked with Rohit at my previous company. Rohit has been a great contributor with good mix of technical skills and business understanding, and easy to work with. I have seen him growing and heard very good feedback from my other colleagues and client.",
+                name: "Naresh Kollu",
+                title: "Architect, Data, AI & MarTech",
+                company: "Deerdata",
+                gradient: "from-cyan-500/10 via-teal-500/5 to-transparent",
+                border: "border-cyan-500/20",
+              },
+              {
+                quote: "Worked with this colleague of mine for a critical pricing application at Ericsson and I highly recommend him in any potential growing team.",
+                name: "Harsha Yadlapudi",
+                title: "Data Management Lead - EMEA",
+                company: "Google",
+                gradient: "from-pink-500/10 via-rose-500/5 to-transparent",
+                border: "border-pink-500/20",
+              },
+            ].map((testimonial, index) => (
+              <div
+                key={`testimonial-1-${index}`}
+                className={`flex-shrink-0 w-[400px] p-6 bg-gradient-to-br ${testimonial.gradient} border ${testimonial.border} rounded-2xl`}
+              >
+                <Quote className="w-8 h-8 text-primary/40 mb-4" />
+                <p className="text-foreground leading-relaxed mb-6 text-sm">
+                  "{testimonial.quote}"
+                </p>
+                <div className="border-t border-white/10 pt-4">
+                  <p className="font-semibold text-foreground">{testimonial.name}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+                  <p className="text-sm text-primary">{testimonial.company}</p>
+                </div>
+              </div>
+            ))}
+            
+            {/* Duplicate set for seamless loop */}
+            {[
+              {
+                quote: "Rohit is a highly talented professional who's worked hard and within no time he's made a mark for himself as very innovative problem solver. We've worked in the same project in TCS during 2014-2017 and his skilled approach in dealing with various challenges in Operations, handling customers and other stake holders in IT Management and later as an Automation Developer have been well regarded.",
+                name: "Murali Krishna Chaturvedi",
+                title: "Lead Quality Assurance - Performance & System Integration",
+                company: "Nasdaq",
+                gradient: "from-blue-500/10 via-cyan-500/5 to-transparent",
+                border: "border-blue-500/20",
+              },
+              {
+                quote: "I had the pleasure of working with Rohit for 4 years. I rarely come across real package of ('hard-work' + 'commitment' + 'quick-learn' + 'zeal') who stand out like Rohit. Rohit's ability to handle the pressure situation was unlike any I've seen before and made a dramatic increase in the productivity and good-will of our deliverables. As a team member or a leader, Rohit earns my highest recommendation.",
+                name: "Deepak Kamarsu",
+                title: "Sr. Data Scientist / Machine Learning Engineer",
+                company: "Telia",
+                gradient: "from-green-500/10 via-emerald-500/5 to-transparent",
+                border: "border-green-500/20",
+              },
+              {
+                quote: "He is one of the guy whom one can rely on delivering the project ontime with high quality. Though he was new to team within short span of time he made his mark and created visibility across the division. It's not just the task that was assigned but he goes beyond and adds value to make sure to have higher customer satisfaction. If I ever get a chance I would love to work with him.",
+                name: "Harish Ketha",
+                title: "Senior Manager",
+                company: "Tinuiti",
+                gradient: "from-violet-500/10 via-purple-500/5 to-transparent",
+                border: "border-violet-500/20",
+              },
+              {
+                quote: "Have worked with Rohit right from the day he joined as a fresher. A hard working guy with immense knowledge and extreme capabilities. He excels in any role that he is assigned.",
+                name: "Sony Malathkar",
+                title: "Agile Product Owner",
+                company: "Swedbank",
+                gradient: "from-orange-500/10 via-amber-500/5 to-transparent",
+                border: "border-orange-500/20",
+              },
+              {
+                quote: "I indirectly worked with Rohit at my previous company. Rohit has been a great contributor with good mix of technical skills and business understanding, and easy to work with. I have seen him growing and heard very good feedback from my other colleagues and client.",
+                name: "Naresh Kollu",
+                title: "Architect, Data, AI & MarTech",
+                company: "Deerdata",
+                gradient: "from-cyan-500/10 via-teal-500/5 to-transparent",
+                border: "border-cyan-500/20",
+              },
+              {
+                quote: "Worked with this colleague of mine for a critical pricing application at Ericsson and I highly recommend him in any potential growing team.",
+                name: "Harsha Yadlapudi",
+                title: "Data Management Lead - EMEA",
+                company: "Google",
+                gradient: "from-pink-500/10 via-rose-500/5 to-transparent",
+                border: "border-pink-500/20",
+              },
+            ].map((testimonial, index) => (
+              <div
+                key={`testimonial-2-${index}`}
+                className={`flex-shrink-0 w-[400px] p-6 bg-gradient-to-br ${testimonial.gradient} border ${testimonial.border} rounded-2xl`}
+              >
+                <Quote className="w-8 h-8 text-primary/40 mb-4" />
+                <p className="text-foreground leading-relaxed mb-6 text-sm">
+                  "{testimonial.quote}"
+                </p>
+                <div className="border-t border-white/10 pt-4">
+                  <p className="font-semibold text-foreground">{testimonial.name}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+                  <p className="text-sm text-primary">{testimonial.company}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Footer / Contact */}
       <footer id="contact" className="py-20 container mx-auto px-4 text-center">
