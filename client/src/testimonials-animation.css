@@ -1,14 +1,14 @@
 /* Testimonials auto-scroll animation */
-@layer utilities {
-  @keyframes scroll-testimonials {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
+@keyframes scroll-testimonials {
+  from {
+    transform: translateX(0);
   }
+  to {
+    transform: translateX(-50%);
+  }
+}
 
+@layer utilities {
   .animate-scroll-testimonials {
     display: flex !important;
     animation: scroll-testimonials 60s linear infinite !important;
