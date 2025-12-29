@@ -11,18 +11,21 @@
 @layer utilities {
   .animate-scroll-testimonials {
     display: flex !important;
-    animation: scroll-testimonials 30s linear infinite !important;
+    animation: scroll-testimonials 20s linear infinite !important;
     will-change: transform;
   }
 
-  .animate-scroll-testimonials:hover {
-    animation-play-state: paused !important;
+  /* Disable pause on touch devices to prevent accidental stops while scrolling */
+  @media (hover: hover) and (pointer: fine) {
+    .animate-scroll-testimonials:hover {
+      animation-play-state: paused !important;
+    }
   }
   
-  /* Faster on mobile */
+  /* Slower on desktop for comfortable reading */
   @media (min-width: 768px) {
     .animate-scroll-testimonials {
-      animation-duration: 50s !important;
+      animation-duration: 45s !important;
     }
   }
 }
