@@ -79,7 +79,7 @@ function ExperienceSection({ fadeInUp }: { fadeInUp: any }) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: index * 0.05 }}
+            transition={{ delay: index * 0.1 }}
             className="flex flex-col items-center gap-6 p-8 border border-white/10 rounded-2xl hover:bg-muted/5 hover:border-primary/30 transition-all w-full group"
           >
             <div
@@ -177,11 +177,18 @@ export default function Home() {
   const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
+    let rafId: number;
     const handleScroll = () => {
-      setShowBackToTop(window.scrollY > 500);
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        setShowBackToTop(window.scrollY > 500);
+      });
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   const scrollToTop = () => {
@@ -379,7 +386,7 @@ export default function Home() {
 
       {/* Sticky Tabs */}
       <div className="sticky top-0 z-20 bg-background/95 backdrop-blur-sm border-b border-white/10 shadow-lg">
-        <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-4 py-0">
           <Tabs defaultValue="overview" className="w-full">
             <TabsList className="w-full h-auto flex flex-wrap justify-center gap-2 bg-transparent">
               <TabsTrigger value="overview" className="flex items-center gap-2 px-6 py-3 text-base cursor-pointer data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
@@ -582,17 +589,22 @@ export default function Home() {
           className="w-full space-y-4"
           onValueChange={(value) => {
             if (value) {
-              requestAnimationFrame(() => {
-                const trigger = document.querySelector(`[data-state="open"]`)?.closest('[data-accordion-item]')?.querySelector('[data-radix-collection-item]');
-                if (trigger) {
-                  const triggerRect = trigger.getBoundingClientRect();
-                  const isAboveViewport = triggerRect.top < 100;
-                  
-                  if (isAboveViewport) {
-                    trigger.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              setTimeout(() => {
+                const openItem = document.querySelector(`[data-accordion-item] [data-state="open"]`);
+                if (openItem) {
+                  const accordionItem = openItem.closest('[data-accordion-item]');
+                  if (accordionItem) {
+                    const rect = accordionItem.getBoundingClientRect();
+                    const navbarHeight = 100;
+                    
+                    // If the accordion trigger is above the viewport or too close to top
+                    if (rect.top < navbarHeight) {
+                      const scrollTop = window.scrollY + rect.top - navbarHeight - 20;
+                      window.scrollTo({ top: scrollTop, behavior: 'smooth' });
+                    }
                   }
                 }
-              });
+              }, 100);
             }
           }}
         >
@@ -1393,7 +1405,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.05 }}
+              transition={{ delay: 0 * 0.1 }}
               viewport={{ once: true }}
               className="text-center p-4 bg-primary/5 border border-primary/20 rounded-xl"
             >
@@ -1403,7 +1415,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 1 * 0.1 }}
               viewport={{ once: true }}
               className="text-center p-4 bg-primary/5 border border-primary/20 rounded-xl"
             >
@@ -1415,7 +1427,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
+              transition={{ delay: 2 * 0.1 }}
               viewport={{ once: true }}
               className="text-center p-4 bg-primary/5 border border-primary/20 rounded-xl"
             >
@@ -1425,7 +1437,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 3 * 0.1 }}
               viewport={{ once: true }}
               className="text-center p-4 bg-primary/5 border border-primary/20 rounded-xl"
             >
