@@ -1012,8 +1012,8 @@ export default function Home() {
         {/* Auto-scrolling container */}
         <div className="relative">
           {/* Gradient fade edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
           
           {/* Scrolling testimonials */}
           <div className="flex gap-6 animate-scroll-testimonials hover:pause-animation">
@@ -1070,7 +1070,7 @@ export default function Home() {
             ].map((testimonial, index) => (
               <div
                 key={`testimonial-1-${index}`}
-                className={`flex-shrink-0 w-[400px] p-6 bg-gradient-to-br ${testimonial.gradient} border ${testimonial.border} rounded-2xl`}
+                className={`flex-shrink-0 w-[300px] md:w-[400px] p-6 bg-gradient-to-br ${testimonial.gradient} border ${testimonial.border} rounded-2xl`}
               >
                 <Quote className="w-8 h-8 text-primary/40 mb-4" />
                 <p className="text-foreground leading-relaxed mb-6 text-sm">
@@ -1137,7 +1137,7 @@ export default function Home() {
             ].map((testimonial, index) => (
               <div
                 key={`testimonial-2-${index}`}
-                className={`flex-shrink-0 w-[400px] p-6 bg-gradient-to-br ${testimonial.gradient} border ${testimonial.border} rounded-2xl`}
+                className={`flex-shrink-0 w-[300px] md:w-[400px] p-6 bg-gradient-to-br ${testimonial.gradient} border ${testimonial.border} rounded-2xl`}
               >
                 <Quote className="w-8 h-8 text-primary/40 mb-4" />
                 <p className="text-foreground leading-relaxed mb-6 text-sm">
