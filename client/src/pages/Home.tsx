@@ -352,10 +352,14 @@ export default function Home() {
             <p className="text-2xl md:text-3xl lg:text-4xl font-medium text-primary/90 mb-4">
               Senior QA Automation Developer
             </p>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed">
-              Building enterprise-grade test automation frameworks across UI, API, and backend layers for
-              microservices, distributed systems, and cloud-native applications
-            </p>
+            <div className="max-w-4xl mx-auto mb-10 space-y-4">
+              <p className="text-xl md:text-2xl text-foreground font-semibold leading-relaxed">
+                I architect test automation that catches bugs before deployment
+              </p>
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                11+ years building comprehensive test frameworks for distributed microservices • Pre-merge validation preventing production issues • AI-powered test automation reducing manual effort by 60%
+              </p>
+            </div>
 
             <motion.div
               initial={{ opacity: 0 }}
@@ -421,7 +425,7 @@ export default function Home() {
                 icon: Target,
               },
               {
-                title: "1500+",
+                title: "1300+",
                 subtitle: "Test Cases",
                 desc: "Comprehensive coverage across all layers",
                 icon: TestTube2,
@@ -516,881 +520,304 @@ export default function Home() {
               </div>
             ))}
           </div>
-
-          <div
-            className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-purple-500/5 to-blue-500/10 border border-primary/30 rounded-2xl p-8 md:p-10 backdrop-blur-sm group hover:border-primary/50 transition-all duration-500 mb-12"
-          >
-            {/* Animated background elements */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-pulse-slow"></div>
-            <div
-              className="absolute bottom-0 left-0 w-36 h-36 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow"
-              style={{ animationDelay: "1s" }}
-            ></div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-blue-500/5 rounded-full blur-3xl"></div>
-
-            <div className="relative z-10">
-              <div className="flex items-start justify-between mb-6">
-                <div
-                  className="text-primary/40 group-hover:text-primary/60 transition-colors duration-500"
-                >
-                  <svg
-                    className="w-12 h-12"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                  </svg>
-                </div>
-                <div className="h-1 w-20 bg-gradient-to-r from-primary/50 to-transparent rounded-full"></div>
-              </div>
-
-              <div className="space-y-3">
-                <p className="text-xl md:text-3xl font-display font-bold text-foreground leading-tight">
-                  Test automation isn't just code
-                </p>
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                  — it's{" "}
-                  <span className="relative inline-block">
-                    <span className="relative z-10 text-primary font-bold px-2 py-1">
-                      trust, speed, and peace of mind
-                    </span>
-                    <span className="absolute inset-0 bg-primary/20 blur-xl rounded-lg"></span>
-                  </span>
-                  , wrapped in logic.
-                </p>
-              </div>
-
-              <div
-                className="mt-6 flex items-center gap-3"
-              >
-                <div className="h-px flex-1 bg-gradient-to-r from-primary/30 via-primary/10 to-transparent"></div>
-                <div className="flex items-center gap-1.5">
-                  <div className="w-2 h-2 rounded-full bg-primary/60 shadow-lg shadow-primary/50"></div>
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/40"></div>
-                  <div className="w-1 h-1 rounded-full bg-primary/20"></div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
       </div></TabsContent>
 
             <TabsContent value="testing" className="mt-0"><div>
       
-      <div className="container mx-auto px-4 py-8">
-        <p className="text-lg text-muted-foreground text-center mb-8 max-w-3xl mx-auto">
-          Comprehensive testing expertise spanning AI-powered automation, multi-layer frameworks, distributed systems, and shift-left strategies. Expand sections below to explore each area.
-        </p>
-        
-        <Accordion 
-          type="single" 
-          collapsible 
-          className="w-full space-y-4"
-          onValueChange={(value) => {
-            if (value) {
-              setTimeout(() => {
-                const openItem = document.querySelector(`[data-accordion-item] [data-state="open"]`);
-                if (openItem) {
-                  const accordionItem = openItem.closest('[data-accordion-item]');
-                  if (accordionItem) {
-                    const rect = accordionItem.getBoundingClientRect();
-                    const navbarHeight = 100;
-                    
-                    // If the accordion trigger is above the viewport or too close to top
-                    if (rect.top < navbarHeight) {
-                      const scrollTop = window.scrollY + rect.top - navbarHeight - 20;
-                      window.scrollTo({ top: scrollTop, behavior: 'smooth' });
-                    }
-                  }
-                }
-              }, 100);
-            }
-          }}
+      <div className="container mx-auto px-4 py-12 max-w-6xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
         >
-          <AccordionItem value="ai-testing" className="border-0 overflow-hidden scroll-mt-20" data-accordion-item style={{overflowAnchor: 'none'}}>
-            <div className="relative bg-gradient-to-br from-violet-500/5 to-purple-500/5 rounded-xl">
-              <AccordionTrigger className="text-xl font-bold hover:text-primary px-6 py-6 border border-white/10 rounded-xl hover:border-violet-500/30 transition-colors">
-                <div className="flex items-center gap-3">
-                  <Sparkles className="w-6 h-6 text-violet-500" />
-                  AI-Powered Testing & Automation
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="px-0">
-      {/* AI-Assisted Testing */}
-      <section
-        id="ai-testing"
-        className="py-12 relative"
-      >
-        <div className="container mx-auto px-6">
-        <motion.div {...fadeInUp} className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 flex items-center gap-4 justify-center">
-            <span className="w-16 h-[2px] bg-gradient-to-r from-transparent via-violet-500 to-purple-500"></span>
-            AI-Powered Testing & Automation
-            <Sparkles className="w-10 h-10 text-violet-500" />
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+            Testing & Automation Expertise
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-12 text-center max-w-4xl mx-auto">
-            Leveraging artificial intelligence and machine learning to transform
-            test automation — from intelligent test generation and maintenance
-            to predictive analytics and adaptive test execution strategies.
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Specialized in building comprehensive test automation for complex distributed systems
           </p>
+        </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {[
-              {
-                icon: BookOpen,
-                title: "AI-Driven Test Planning & Case Generation",
-                desc: "Utilizing AI to analyze requirements, design specifications, and historical test data to auto-generate comprehensive test scenarios. Integrating with Jira & Xray for automated test case creation, reducing manual effort by 60%.",
-                highlights: [
-                  "Natural language to test case conversion",
-                  "Requirement-driven scenario generation",
-                  "Auto-generated BDD Gherkin features",
-                  "Test coverage gap analysis",
-                ],
-              },
-              {
-                icon: Code2,
-                title: "Intelligent Test Code Generation",
-                desc: "Leveraging AI to analyze source code and automatically generate unit tests, integration tests, and UI automation scripts. Maintaining code quality while accelerating test development cycles.",
-                highlights: [
-                  "Source code analysis for test generation",
-                  "Page Object Model auto-creation",
-                  "API test scaffold generation",
-                  "Test data factory automation",
-                ],
-              },
-              {
-                icon: Brain,
-                title: "Predictive Test Failure Analysis",
-                desc: "Using machine learning to analyze test execution patterns, identify flaky tests, predict failure-prone areas, and recommend optimal test execution sequences based on code changes.",
-                highlights: [
-                  "Flaky test detection & isolation",
-                  "Failure pattern recognition",
-                  "Risk-based test prioritization",
-                  "Code change impact analysis",
-                ],
-              },
-              {
-                icon: Cpu,
-                title: "Smart Test Data Generation",
-                desc: "AI-powered test data generation that understands domain constraints, creates realistic edge cases, and maintains referential integrity across complex data models and microservice boundaries.",
-                highlights: [
-                  "Context-aware data generation",
-                  "Boundary value analysis automation",
-                  "Synthetic PII-safe test data",
-                  "Cross-service data consistency",
-                ],
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="p-8 border border-white/10 rounded-xl bg-muted/5 hover:bg-muted/10 hover:border-primary/30 transition-all group"
-              >
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="p-3 bg-gradient-to-br from-violet-500/10 to-purple-500/10 rounded-xl text-violet-500 group-hover:from-violet-500/20 group-hover:to-purple-500/20 transition-all flex-shrink-0">
-                    <item.icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground pt-2">
-                    {item.title}
+        {/* Hero Projects */}
+        <div className="space-y-8">
+          
+          {/* Project 1: Enterprise E2E Framework */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="relative overflow-hidden bg-gradient-to-br from-blue-500/10 via-cyan-500/5 to-transparent border border-blue-500/20 rounded-2xl p-8 hover:border-blue-500/40 transition-all group"
+          >
+            <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-30 transition-opacity">
+              <Network className="w-16 h-16 text-blue-500" />
+            </div>
+            
+            <div className="relative z-10">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="p-3 bg-blue-500/20 rounded-xl">
+                  <TestTube2 className="w-7 h-7 text-blue-500" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-foreground mb-2">
+                    Enterprise Microservices Test Automation Framework
                   </h3>
+                  <p className="text-sm text-blue-500 font-medium">Core Achievement • 2020 - Present</p>
                 </div>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  {item.desc}
-                </p>
-                <ul className="space-y-2">
-                  {item.highlights.map((highlight, i) => (
-                    <li
-                      key={i}
-                      className="flex items-center gap-2 text-sm text-muted-foreground"
-                    >
-                      <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
-                      {highlight}
+              </div>
+              
+              <div className="space-y-4 mb-6">
+                <div>
+                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">The Challenge</h4>
+                  <p className="text-foreground">
+                    Testing complex SaaS platform with 15+ microservices, event-driven architecture, heterogeneous data stores (PostgreSQL, MSSQL, MongoDB, Citus), and critical business workflows requiring validation across distributed boundaries.
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">The Solution</h4>
+                  <p className="text-foreground">
+                    Built and maintained <strong>4 comprehensive test automation frameworks</strong> covering:
+                  </p>
+                  <ul className="space-y-2 mt-2 text-foreground">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2"></div>
+                      <span><strong>E2E Framework</strong> - Isolated Docker environments validating inter-service workflows and database state</span>
                     </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="p-6 bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 rounded-xl">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-primary/20 rounded-lg">
-                  <Target className="w-5 h-5 text-primary" />
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2"></div>
+                      <span><strong>API Test Suite</strong> - Automated endpoint validation, contract testing, and liveness checks</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2"></div>
+                      <span><strong>UI Regression Suite</strong> - BDD scenarios testing critical user journeys across the platform</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2"></div>
+                      <span><strong>Component Test Suite</strong> - React UI validation with mocked API integration</span>
+                    </li>
+                  </ul>
                 </div>
-                <h3 className="text-lg font-bold text-foreground">
-                  Impact & Results
-                </h3>
-              </div>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>• 60% reduction in test creation time</li>
-                <li>• 40% decrease in flaky test occurrences</li>
-                <li>• Improved test coverage by 35%</li>
-                <li>• Faster root cause identification</li>
-              </ul>
-            </div>
-
-            <div className="p-6 bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 rounded-xl">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-primary/20 rounded-lg">
-                  <Zap className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="text-lg font-bold text-foreground">
-                  AI Tools Used
-                </h3>
-              </div>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>• GitHub Copilot for code generation</li>
-                <li>• ChatGPT/Claude for test planning</li>
-                <li>• Custom ML models for analysis</li>
-                <li>• OpenAI API integrations</li>
-              </ul>
-            </div>
-
-            <div className="p-6 bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 rounded-xl">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-primary/20 rounded-lg">
-                  <Shield className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="text-lg font-bold text-foreground">
-                  Best Practices
-                </h3>
-              </div>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>• Human-in-the-loop validation</li>
-                <li>• AI output code review process</li>
-                <li>• Continuous model improvement</li>
-                <li>• Security & privacy compliance</li>
-              </ul>
-            </div>
-          </div>
-        </motion.div>
-        </div>
-      </section>
-            </AccordionContent>
-            </div>
-          </AccordionItem>
-
-          <AccordionItem value="foundation" className="border-0 overflow-hidden scroll-mt-20" data-accordion-item style={{overflowAnchor: 'none'}}>
-            <div className="relative bg-gradient-to-br from-blue-500/5 to-cyan-500/5 rounded-xl">
-              <AccordionTrigger className="text-xl font-bold hover:text-primary px-6 py-6 border border-white/10 rounded-xl hover:border-blue-500/30 transition-colors">
-                <div className="flex items-center gap-3">
-                  <TestTube2 className="w-6 h-6 text-blue-500" />
-                  Foundation: Multi-Layer Testing
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="px-0">
-      {/* Foundation: Multi-Layer Testing */}
-      <section id="foundation" className="py-12 relative">
-        <div className="container mx-auto px-6 relative z-10">
-            <motion.div {...fadeInUp} className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 flex items-center gap-4 justify-center">
-            <span className="w-16 h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-cyan-500"></span>
-            Foundation: Multi-Layer Testing
-            <TestTube2 className="w-10 h-10 text-blue-500" />
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-12 text-center max-w-3xl mx-auto">
-            Built and maintained multiple comprehensive test automation
-            frameworks covering all testing layers — from API validation and
-            load testing to UI automation across web and enterprise
-            applications. This foundation enabled scaling to complex distributed
-            systems testing.
-          </p>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {[
-              {
-                icon: Code2,
-                title: "API Test Framework",
-                desc: "Comprehensive REST API testing framework validating 10+ microservice APIs with liveness checks, contract validation, and automated regression suites.",
-                tech: ["RestSharp", "xUnit", "FluentAssertions"],
-                highlights: [
-                  "Multi-environment support (Dev/QA)",
-                  "Bearer token authentication",
-                  "CircleCI integration with scheduled runs",
-                  "BFF (Backend-for-Frontend) validation",
-                ],
-              },
-              {
-                icon: Layout,
-                title: "Selenium UI Framework",
-                desc: "Enterprise-grade Selenium WebDriver framework for end-to-end UI testing with BDD approach using SpecFlow. Supports Chrome and Edge browsers with parallel execution.",
-                tech: ["Selenium", "SpecFlow", ".NET 8.0"],
-                highlights: [
-                  "Page Object Model architecture",
-                  "BDD with Gherkin scenarios",
-                  "Multi-browser support",
-                  "Dockerized test execution",
-                ],
-              },
-              {
-                icon: Smartphone,
-                title: "Cypress Component Testing",
-                desc: "Modern Cypress-based test suite for React component and E2E testing with mocking capabilities. Focused on validating UI elements and components.",
-                tech: ["Cypress", "TypeScript", "React"],
-                highlights: [
-                  "Component-level testing",
-                  "API mocking for isolation",
-                  "Parallel spec execution",
-                  "JUnit XML reporting",
-                ],
-              },
-              {
-                icon: Zap,
-                title: "Performance Testing",
-                desc: "JMeter-based load testing framework for API performance validation under various load conditions across multiple environments.",
-                tech: ["JMeter", "Performance Metrics", "Load Testing"],
-                highlights: [
-                  "Configurable load scenarios",
-                  "Multi-environment testing",
-                  "Response time analysis",
-                  "Throughput measurement",
-                ],
-              },
-              {
-                icon: Database,
-                title: "Integration Testing",
-                desc: "Cross-service integration test suites validating data flow across distributed systems with database verification and message queue validation.",
-                tech: ["xUnit", "NATS", "Multi-DB"],
-                highlights: [
-                  "Event-driven validation",
-                  "Database state verification",
-                  "Cross-service workflows",
-                  "Docker-based isolation",
-                ],
-              },
-              {
-                icon: Shield,
-                title: "CI/CD Integration",
-                desc: "Fully automated test execution pipelines integrated with CircleCI and GitHub Actions. Scheduled runs, on-demand triggers, and comprehensive reporting.",
-                tech: ["CircleCI", "GitHub Actions", "Jira"],
-                highlights: [
-                  "Scheduled regression runs",
-                  "Parameterized pipelines",
-                  "Multi-tenant support",
-                  "Automated test reporting",
-                ],
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="p-6 border border-white/10 rounded-xl bg-muted/5 hover:bg-muted/10 hover:border-blue-500/30 transition-all group"
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-lg text-blue-500 group-hover:from-blue-500/20 group-hover:to-cyan-500/20 transition-all flex-shrink-0">
-                    <item.icon className="w-6 h-6" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-foreground mb-2">
-                      {item.title}
-                    </h3>
-                  </div>
-                </div>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  {item.desc}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {item.tech.map((tech, i) => (
-                    <Badge
-                      key={i}
-                      className="px-3 py-1 text-xs bg-primary/5 text-primary border border-primary/20"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-                <ul className="space-y-1">
-                  {item.highlights.map((highlight, i) => (
-                    <li
-                          key={i}
-                          className="flex items-start gap-2 text-xs text-muted-foreground"
-                        >
-                          <div className="w-1 h-1 rounded-full bg-primary flex-shrink-0 mt-1.5"></div>
-                          {highlight}
-                        </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="p-6 bg-gradient-to-br from-blue-500/10 via-cyan-500/5 to-transparent border border-blue-500/20 rounded-xl backdrop-blur-sm">
-              <h3 className="text-xl font-bold text-foreground mb-3 flex items-center gap-2">
-                <Target className="w-5 h-5 text-blue-500" />
-                Test Coverage
-              </h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-blue-500" />
-                  <strong className="text-foreground">API Layer:</strong> 100+
-                  API endpoints validated
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-blue-500" />
-                  <strong className="text-foreground">UI Layer:</strong>{" "}
-                  Critical user journeys automated
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-blue-500" />
-                  <strong className="text-foreground">Integration:</strong>{" "}
-                  Cross-service workflows
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-blue-500" />
-                  <strong className="text-foreground">Performance:</strong> Load
-                  & stress testing
-                </li>
-              </ul>
-            </div>
-
-            <div className="p-6 bg-gradient-to-br from-cyan-500/10 via-blue-500/5 to-transparent border border-cyan-500/20 rounded-xl backdrop-blur-sm">
-              <h3 className="text-xl font-bold text-foreground mb-3 flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-cyan-500" />
-                Framework Features
-              </h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-cyan-500" />
-                  Reusable test framework NuGet packages
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-cyan-500" />
-                  Configurable for multiple environments
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-cyan-500" />
-                  Comprehensive logging and reporting
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-cyan-500" />
-                  Parallel execution capabilities
-                </li>
-              </ul>
-            </div>
-          </div>
-        </motion.div>
-        </div>
-        
-      </section>
-            </AccordionContent>
-            </div>
-          </AccordionItem>
-
-          <AccordionItem value="advanced-testing" className="border-0 overflow-hidden scroll-mt-20" data-accordion-item style={{overflowAnchor: 'none'}}>
-            <div className="relative bg-gradient-to-br from-green-500/5 to-orange-500/5 rounded-xl">
-              <AccordionTrigger className="text-xl font-bold hover:text-primary px-6 py-6 border border-white/10 rounded-xl hover:border-green-500/30 transition-colors">
-                <div className="flex items-center gap-3">
-                  <Network className="w-6 h-6 text-green-500" />
-                  Advanced Testing Strategies
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="px-0">
-      {/* Advanced Testing */}
-      <section id="advanced-testing" className="py-12 relative">
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div {...fadeInUp} className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 flex items-center gap-4 justify-center">
-              <span className="w-16 h-[2px] bg-gradient-to-r from-transparent via-green-500 to-emerald-500"></span>
-              Advanced Testing Strategies
-              <Network className="w-10 h-10 text-green-500" />
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-12 text-center max-w-4xl mx-auto">
-              Architecting comprehensive testing solutions for complex
-              distributed systems and implementing shift-left strategies to
-              catch issues early in the development cycle.
-            </p>
-
-            <Tabs defaultValue="microservices" className="w-full">
-              <TabsList className="w-full h-auto flex flex-wrap justify-center gap-2 bg-muted/20 mb-8 p-2">
-                <TabsTrigger value="microservices" className="flex items-center gap-2 px-4 py-2 cursor-pointer data-[state=active]:bg-primary/10 data-[state=active]:text-foreground">
-                  <Layers className="w-4 h-4" />
-                  Microservices & Distributed
-                </TabsTrigger>
-                <TabsTrigger value="shift-left" className="flex items-center gap-2 px-4 py-2 cursor-pointer data-[state=active]:bg-primary/10 data-[state=active]:text-foreground">
-                  <CheckCircle2 className="w-4 h-4" />
-                  Shift-Left Testing
-                </TabsTrigger>
-                <TabsTrigger value="test-strategy" className="flex items-center gap-2 px-4 py-2 cursor-pointer data-[state=active]:bg-primary/10 data-[state=active]:text-foreground">
-                  <BookOpen className="w-4 h-4" />
-                  Test Strategy & Process
-                </TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="microservices" className="mt-0">
-            {/* Microservices & Distributed Systems Subsection */}
-            <div id="microservices">
-              <p className="text-muted-foreground leading-relaxed mb-8 text-center max-w-3xl mx-auto">
-                Validating complex, event-driven microservice ecosystems with
-                comprehensive end-to-end testing strategies that ensure
-                reliability across distributed architectures.
-              </p>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                {[
-                  {
-                    icon: Layers,
-                    title: "Multi-Service Testing",
-                    desc: "Built comprehensive test suites validating 15+ microservices working in concert. Testing inter-service communication, contract compliance, and data flow across distributed boundaries.",
-                    tech: ["Microservices", "API Gateway", "Event Bus"],
-                  },
-                  {
-                    icon: Workflow,
-                    title: "Event-Driven Architecture",
-                    desc: "Validating asynchronous message flows through NATS JetStream. Testing event publication, consumption, message ordering, and eventual consistency across service boundaries.",
-                    tech: ["NATS", "JetStream", "Async Messaging"],
-                  },
-                  {
-                    icon: Container,
-                    title: "Docker Orchestration",
-                    desc: "Architected isolated test environments using Docker Compose orchestrating 20+ containers. Spinning up complete microservice ecosystems with databases, message queues, and all dependencies.",
-                    tech: [
-                      "Docker",
-                      "Docker Compose",
-                      "Container Orchestration",
-                    ],
-                  },
-                  {
-                    icon: Database,
-                    title: "Multi-Database Testing",
-                    desc: "Comprehensive database validation across heterogeneous data stores. Testing data consistency, transactions, and migrations across PostgreSQL, MSSQL, MongoDB, and Citus distributed databases.",
-                    tech: ["PostgreSQL", "MSSQL", "MongoDB", "Citus"],
-                  },
-                  {
-                    icon: Shield,
-                    title: "Contract Testing",
-                    desc: "Ensuring API contracts and message schemas remain consistent across service versions. Validating backward compatibility and preventing breaking changes in distributed systems.",
-                    tech: [
-                      "Contract Validation",
-                      "Schema Testing",
-                      "Versioning",
-                    ],
-                  },
-                  {
-                    icon: Cpu,
-                    title: "Integration Complexity",
-                    desc: "Testing complex integration scenarios involving data ingestion pipelines, evidence extraction, identity management, and cross-service orchestration workflows.",
-                    tech: [
-                      "E2E Testing",
-                      "Data Pipeline",
-                      "Workflow Automation",
-                    ],
-                  },
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="p-6 border border-white/10 rounded-xl bg-muted/5 hover:bg-muted/10 hover:border-green-500/30 transition-all group"
-                  >
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="p-3 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-lg text-green-500 group-hover:from-green-500/20 group-hover:to-emerald-500/20 transition-all flex-shrink-0">
-                        <item.icon className="w-6 h-6" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold text-foreground mb-2">
-                          {item.title}
-                        </h3>
-                      </div>
-                    </div>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                      {item.desc}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {item.tech.map((tech, i) => (
-                        <Badge
-                          key={i}
-                          className="px-3 py-1 text-xs bg-primary/5 text-primary border border-primary/20"
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 rounded-2xl p-8">
-                <div className="flex items-start gap-6">
-                  <div className="p-4 bg-primary/20 rounded-xl flex-shrink-0">
-                    <Network className="w-8 h-8 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-3">
-                      Real-World Impact
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed mb-4">
-                      Architected an{" "}
-                      <strong className="text-foreground">
-                        enterprise-scale E2E test automation framework
-                      </strong>{" "}
-                      — a sophisticated testing framework that validates complex
-                      inter-service communication by directly injecting data to
-                      receiver services and verifying database state across a
-                      fully orchestrated microservice environment.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <Badge className="px-4 py-2 bg-primary/10 text-primary border border-primary/30">
-                        Microservices
-                      </Badge>
-                      <Badge className="px-4 py-2 bg-primary/10 text-primary border border-primary/30">
-                        NATS Event Bus
-                      </Badge>
-                      <Badge className="px-4 py-2 bg-primary/10 text-primary border border-primary/30">
-                        Docker Compose
-                      </Badge>
-                      <Badge className="px-4 py-2 bg-primary/10 text-primary border border-primary/30">
-                        .NET 9.0
-                      </Badge>
-                    </div>
-                  </div>
+                
+                <div>
+                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">Impact</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground"><strong>1200+ automated test scenarios</strong> across 4 comprehensive test suites validating API, UI, E2E, and component layers</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground"><strong>Isolated E2E environment</strong> spinning up entire microservice ecosystem using GitHub Actions with self-hosted runners</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground"><strong>Multi-tenant validation</strong> with scheduled regression runs (10+ daily workflows) across dev/qa environments</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground"><strong>Complete CI/CD integration</strong> with CircleCI, GitHub Actions, Jira Xray reporting, and multi-platform test execution</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
-            </div>
-              </TabsContent>
-
-              <TabsContent value="shift-left" className="mt-0">
-            {/* Shift-Left Testing Subsection */}
-            <div id="shift-left">
-              <p className="text-muted-foreground leading-relaxed mb-8 text-center max-w-3xl mx-auto">
-                Embedding quality validation early in the development cycle
-                through pre-merge testing, CI/CD integration, and automated
-                validation.
-              </p>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                {[
-                  {
-                    icon: CheckCircle2,
-                    title: "Pre-Merge Validation",
-                    desc: "Integrated automated tests directly into service pipelines to run comprehensive validation before code merges. Ensuring every PR is validated against the full microservice ecosystem, catching integration issues early.",
-                    highlights: [
-                      "GitHub Actions integration",
-                      "Self-hosted CI/CD runners",
-                      "Automated environment provisioning",
-                      "Pre-merge quality gates",
-                    ],
-                  },
-                  {
-                    icon: Container,
-                    title: "Isolated Test Environments",
-                    desc: "Architected Docker-based isolated test environments that spin up complete microservice ecosystems on-demand. Each test run gets a fresh, reproducible environment preventing test pollution and flaky tests.",
-                    highlights: [
-                      "Docker Compose orchestration",
-                      "20+ containerized services",
-                      "Database seeding & initialization",
-                      "Cross-platform compatibility",
-                    ],
-                  },
-                  {
-                    icon: Code2,
-                    title: "BDD with SpecFlow/Reqnroll",
-                    desc: "Implementing Behavior-Driven Development using SpecFlow (now Reqnroll) with Gherkin syntax. Creating living documentation that bridges business requirements and technical implementation.",
-                    highlights: [
-                      "Gherkin feature files",
-                      "xUnit test framework",
-                      "Scenario-based validation",
-                      "Jira Xray integration",
-                    ],
-                  },
-                  {
-                    icon: Workflow,
-                    title: "CI/CD Pipeline Excellence",
-                    desc: "Building sophisticated CI/CD pipelines that automatically provision environments, execute tests, and report results to multiple platforms. Achieving fast feedback loops with comprehensive coverage.",
-                    highlights: [
-                      "Automated environment building",
-                      "Multi-database support",
-                      "Test result aggregation",
-                      "Multi-platform reporting",
-                    ],
-                  },
-                  {
-                    icon: Database,
-                    title: "Dynamic Test Data Management",
-                    desc: "Implementing intelligent test data strategies using ScenarioContext to manage dynamic, random test data without hard-coding. Tests automatically create required data or select from existing data, ensuring different data coverage on each execution.",
-                    highlights: [
-                      "ScenarioContext for data sharing",
-                      "Random data selection per run",
-                      "Automated data setup in scenarios",
-                      "Zero hard-coded test data",
-                    ],
-                  },
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="p-6 border border-white/10 rounded-xl bg-muted/5 hover:bg-muted/10 hover:border-orange-500/30 transition-all group"
-                  >
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="p-3 bg-gradient-to-br from-orange-500/10 to-amber-500/10 rounded-xl text-orange-500 group-hover:from-orange-500/20 group-hover:to-amber-500/20 transition-all flex-shrink-0">
-                        <item.icon className="w-6 h-6" />
-                      </div>
-                      <h3 className="text-xl font-bold text-foreground pt-2">
-                        {item.title}
-                      </h3>
-                    </div>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                      {item.desc}
-                    </p>
-                    <ul className="space-y-2">
-                      {item.highlights.map((highlight, i) => (
-                        <li
-                          key={i}
-                          className="flex items-start gap-2 text-xs text-muted-foreground"
-                        >
-                          <div className="w-1 h-1 rounded-full bg-primary flex-shrink-0 mt-1.5"></div>
-                          {highlight}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-
-              <div className="bg-gradient-to-br from-orange-500/10 via-transparent to-amber-500/10 border border-orange-500/20 rounded-2xl p-8">
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-4">
-                      Enterprise E2E Test Framework
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed mb-4">
-                      A production-grade test automation suite that validates
-                      entire microservice ecosystems through end-to-end
-                      scenarios. Unlike typical test projects, this framework
-                      validates inter-service communication by injecting data
-                      directly to services and verifying state across multiple
-                      distributed data stores.
-                    </p>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      Built with{" "}
-                      <strong className="text-foreground">.NET 9.0</strong>,
-                      using <strong className="text-foreground">xUnit</strong>,{" "}
-                      <strong className="text-foreground">
-                        SpecFlow/Reqnroll
-                      </strong>
-                      , <strong className="text-foreground">RestSharp</strong>,
-                      and integrated with{" "}
-                      <strong className="text-foreground">Jira Xray</strong> for
-                      comprehensive test management.
-                    </p>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="p-4 bg-gradient-to-br from-orange-500/5 to-amber-500/5 rounded-xl border border-orange-500/10 backdrop-blur-sm">
-                      <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                        <TestTube2 className="w-4 h-4 text-orange-500" />
-                        Key Capabilities
-                      </h4>
-                      <ul className="space-y-2 text-sm text-muted-foreground">
-                        <li>• Direct data injection testing</li>
-                        <li>
-                          • Multi-database validation (PostgreSQL, MSSQL,
-                          MongoDB)
-                        </li>
-                        <li>• Event-driven architecture verification</li>
-                        <li>• Docker-based isolated execution</li>
-                        <li>• Pre-merge pipeline integration</li>
-                        <li>• Automated test reporting & tracking</li>
-                      </ul>
-                    </div>
-                    <div className="p-4 bg-gradient-to-br from-amber-500/5 to-orange-500/5 rounded-xl border border-amber-500/10 backdrop-blur-sm">
-                      <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                        <Shield className="w-4 h-4 text-amber-500" />
-                        Business Impact
-                      </h4>
-                      <p className="text-sm text-muted-foreground">
-                        Enabled teams to validate changes before merge, reducing
-                        integration issues by catching cross-service bugs early
-                        in the development cycle.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              
+              <div className="flex flex-wrap gap-2">
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">C# / .NET 8-9</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">xUnit</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">SpecFlow</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">RestSharp</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">Selenium WebDriver</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">Cypress</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">Docker Compose</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">NATS JetStream</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">PostgreSQL</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">MongoDB</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">CircleCI</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">GitHub Actions</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">Jira Xray</Badge>
               </div>
             </div>
-              </TabsContent>
-
-              <TabsContent value="test-strategy" className="mt-0">
-            {/* Test Strategy & Process Excellence Subsection */}
-            <div id="test-strategy">
-              <p className="text-muted-foreground leading-relaxed mb-8 text-center max-w-3xl mx-auto">
-                Establishing quality processes, creating comprehensive documentation, and designing system architecture diagrams that enable effective testing strategies across teams.
-              </p>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {[
-                  {
-                    icon: BookOpen,
-                    title: "Technical Documentation",
-                    desc: "Creating comprehensive test documentation, runbooks, and knowledge base articles. Documenting test frameworks, automation strategies, and best practices to enable team scalability and knowledge transfer.",
-                    highlights: [
-                      "Test framework documentation",
-                      "Automation guides & runbooks",
-                      "Living documentation with BDD",
-                    ],
-                  },
-                  {
-                    icon: Layout,
-                    title: "Architecture & Design",
-                    desc: "Analyzing and documenting system architectures, creating technical diagrams, and understanding complex integrations. Designing test architectures that align with system design and microservice boundaries.",
-                    highlights: [
-                      "System architecture analysis",
-                      "Integration mapping",
-                      "Test architecture design",
-                    ],
-                  },
-                  {
-                    icon: Workflow,
-                    title: "Test Process Setup",
-                    desc: "Establishing testing processes from scratch, defining quality standards, and implementing best practices across teams. Setting up test automation infrastructure, CI/CD pipelines, and quality gates.",
-                    highlights: [
-                      "Process definition & implementation",
-                      "Quality standards establishment",
-                      "Team onboarding & mentoring",
-                      "CI/CD pipeline setup",
-                    ],
-                  },
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="p-6 border border-white/10 rounded-xl bg-muted/5 hover:bg-muted/10 hover:border-blue-500/30 transition-all group"
-                  >
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="p-3 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-lg text-blue-500 group-hover:from-blue-500/20 group-hover:to-cyan-500/20 transition-all flex-shrink-0">
-                        <item.icon className="w-6 h-6" />
-                      </div>
-                      <h3 className="text-xl font-bold text-foreground">
-                        {item.title}
-                      </h3>
-                    </div>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                      {item.desc}
-                    </p>
-                    <ul className="space-y-2">
-                      {item.highlights.map((highlight, i) => (
-                        <li
-                          key={i}
-                          className="flex items-start gap-2 text-xs text-muted-foreground"
-                        >
-                          <div className="w-1 h-1 rounded-full bg-primary flex-shrink-0 mt-1.5"></div>
-                          {highlight}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-              </TabsContent>
-            </Tabs>
           </motion.div>
-        </div>
-      </section>
-            </AccordionContent>
+
+          {/* Project 2: AI-Powered Test Automation */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="relative overflow-hidden bg-gradient-to-br from-violet-500/10 via-purple-500/5 to-transparent border border-violet-500/20 rounded-2xl p-8 hover:border-violet-500/40 transition-all group"
+          >
+            <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-30 transition-opacity">
+              <Sparkles className="w-16 h-16 text-violet-500" />
             </div>
-          </AccordionItem>
-        </Accordion>
+            
+            <div className="relative z-10">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="p-3 bg-violet-500/20 rounded-xl">
+                  <Brain className="w-7 h-7 text-violet-500" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-foreground mb-2">
+                    AI-Assisted Test Generation & Maintenance
+                  </h3>
+                  <p className="text-sm text-violet-500 font-medium">Innovation Initiative • 2023 - Present</p>
+                </div>
+              </div>
+              
+              <div className="space-y-4 mb-6">
+                <div>
+                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">The Challenge</h4>
+                  <p className="text-foreground">
+                    Manual test case creation consuming 40% of QA time, plus constant maintenance overhead from UI/API changes causing brittle tests.
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">The Solution</h4>
+                  <p className="text-foreground">
+                    Integrated GitHub Copilot and custom AI workflows for intelligent test generation from requirements, self-healing test scripts, and automated Gherkin scenario creation from Jira tickets.
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">Impact</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-violet-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground"><strong>60% reduction</strong> in test creation time through AI-generated test scenarios</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-violet-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground"><strong>40% fewer flaky tests</strong> via AI-powered selector optimization and self-healing mechanisms</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-violet-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground"><strong>Automated BDD scenarios</strong> generated from requirements, bridging business-technical gap</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-2">
+                <Badge className="bg-violet-500/10 text-violet-500 border-violet-500/30">GitHub Copilot</Badge>
+                <Badge className="bg-violet-500/10 text-violet-500 border-violet-500/30">OpenAI API</Badge>
+                <Badge className="bg-violet-500/10 text-violet-500 border-violet-500/30">Python</Badge>
+                <Badge className="bg-violet-500/10 text-violet-500 border-violet-500/30">Selenium</Badge>
+                <Badge className="bg-violet-500/10 text-violet-500 border-violet-500/30">Cypress</Badge>
+                <Badge className="bg-violet-500/10 text-violet-500 border-violet-500/30">Jira Xray</Badge>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Project 3: Multi-Layer Testing Foundation */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="relative overflow-hidden bg-gradient-to-br from-orange-500/10 via-amber-500/5 to-transparent border border-orange-500/20 rounded-2xl p-8 hover:border-orange-500/40 transition-all group"
+          >
+            <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-30 transition-opacity">
+              <Layers className="w-16 h-16 text-orange-500" />
+            </div>
+            
+            <div className="relative z-10">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="p-3 bg-orange-500/20 rounded-xl">
+                  <Code2 className="w-7 h-7 text-orange-500" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-foreground mb-2">
+                    Desktop Test Automation Foundation
+                  </h3>
+                  <p className="text-sm text-orange-500 font-medium">Foundation Work • 2018 - 2020</p>
+                </div>
+              </div>
+              
+              <div className="space-y-4 mb-6">
+                <div>
+                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">The Challenge</h4>
+                  <p className="text-foreground">
+                    Maintaining and expanding existing test automation for an enterprise desktop application while supporting 15+ releases with comprehensive test coverage and continuous quality improvements.
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">The Solution</h4>
+                  <p className="text-foreground">
+                    Enhanced and expanded desktop test automation automating both application workflows and external integrations (Excel operations). Participated in all Scrum events, creating comprehensive test strategies and plans. Handled complete testing lifecycle from test creation to execution during PBI & SIT testing.
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">Impact</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground"><strong>150+ test cases automated</strong> covering desktop application and external integrations</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground"><strong>Expanded automation scope</strong> by incorporating 100+ additional test cases in completely new areas</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground"><strong>Streamlined testing</strong> for 15+ releases with comprehensive test strategies and plans</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-2">
+                <Badge className="bg-orange-500/10 text-orange-500 border-orange-500/30">C#</Badge>
+                <Badge className="bg-orange-500/10 text-orange-500 border-orange-500/30">Desktop Automation</Badge>
+                <Badge className="bg-orange-500/10 text-orange-500 border-orange-500/30">WinForms</Badge>
+                <Badge className="bg-orange-500/10 text-orange-500 border-orange-500/30">Excel Integration</Badge>
+                <Badge className="bg-orange-500/10 text-orange-500 border-orange-500/30">MSTest</Badge>
+                <Badge className="bg-orange-500/10 text-orange-500 border-orange-500/30">Agile/Scrum</Badge>
+                <Badge className="bg-orange-500/10 text-orange-500 border-orange-500/30">Azure devops</Badge>
+              </div>
+            </div>
+          </motion.div>
+
+        </div>
+
+        {/* Key Capabilities Quick Reference */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-12 grid md:grid-cols-4 gap-4"
+        >
+          <div className="p-4 bg-muted/30 border border-white/10 rounded-xl text-center">
+            <div className="text-3xl font-bold text-primary mb-1">15+</div>
+            <div className="text-sm text-muted-foreground">Microservices Tested</div>
+          </div>
+          <div className="p-4 bg-muted/30 border border-white/10 rounded-xl text-center">
+            <div className="text-3xl font-bold text-primary mb-1">1300+</div>
+            <div className="text-sm text-muted-foreground">Automated Tests</div>
+          </div>
+          <div className="p-4 bg-muted/30 border border-white/10 rounded-xl text-center">
+            <div className="text-3xl font-bold text-primary mb-1">60%</div>
+            <div className="text-sm text-muted-foreground">Time Saved w/ AI</div>
+          </div>
+          <div className="p-4 bg-muted/30 border border-white/10 rounded-xl text-center">
+            <div className="text-3xl font-bold text-primary mb-1">100%</div>
+            <div className="text-sm text-muted-foreground">Pre-Merge Coverage</div>
+          </div>
+        </motion.div>
       </div>
       
       </div></TabsContent>
 
             <TabsContent value="technology" className="mt-0"><div>
+      
       {/* Technology Ecosystem */}
       <section id="tools" className="py-20 bg-muted/5 border-y border-white/5">
         <motion.div {...fadeInUp} className="max-w-6xl mx-auto container px-4">
