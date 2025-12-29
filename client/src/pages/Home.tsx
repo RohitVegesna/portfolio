@@ -29,7 +29,6 @@ import {
   Eye,
   Wrench,
   Award,
-  TrendingUp,
 } from "lucide-react";
 import heroBg from "@assets/generated_images/modern_tech_gradient_abstract_background.png";
 import { Badge } from "@/components/ui/badge";
@@ -528,252 +527,119 @@ export default function Home() {
             <TabsContent value="testing" className="mt-0"><div>
       
       <div className="container mx-auto px-4 py-12 max-w-6xl">
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 flex items-center gap-4 justify-center">
-            <span className="w-16 h-[2px] bg-gradient-to-r from-transparent to-primary"></span>
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
             Testing & Automation Expertise
-            <span className="w-16 h-[2px] bg-gradient-to-l from-transparent to-primary"></span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Specialized in building comprehensive test automation for complex distributed systems
           </p>
-        </div>
+        </motion.div>
 
         {/* Hero Projects */}
         <div className="space-y-8">
           
-          {/* Project 1: Enterprise E2E Framework - BENTO GRID REDESIGN */}
+          {/* Project 1: Enterprise E2E Framework */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.001, delay: 0.1 }}
-            className="relative overflow-hidden"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="relative overflow-hidden bg-gradient-to-br from-blue-500/10 via-cyan-500/5 to-transparent border border-blue-500/20 rounded-2xl p-8 hover:border-blue-500/40 transition-all group"
           >
-            {/* Background Glow Effects */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-background to-cyan-500/5 rounded-3xl blur-3xl" />
-            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/8 rounded-full blur-[100px] -z-10" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/8 rounded-full blur-[100px] -z-10" />
+            <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-30 transition-opacity">
+              <Network className="w-16 h-16 text-blue-500" />
+            </div>
             
-            <div className="relative bg-gradient-to-br from-blue-500/5 via-background to-cyan-500/5 border border-blue-500/20 rounded-3xl p-5 backdrop-blur-sm">
-              {/* Header */}
-              <div className="mb-5">
-                <div className="flex items-start justify-between mb-3">
-                  <div className="flex items-center gap-2.5">
-                    <div className="p-2 bg-blue-500/10 rounded-lg border border-blue-500/20">
-                      <Network className="w-6 h-6 text-blue-400" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground mb-1">
-                        Enterprise Microservices
-                      </h3>
-                      <p className="text-sm text-blue-500 font-semibold flex items-center gap-2">
-                        <CheckCircle2 className="w-4 h-4" />
-                        Core Production Framework • 2020 - Present
-                      </p>
-                    </div>
-                  </div>
-                  
+            <div className="relative z-10">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="p-3 bg-blue-500/20 rounded-xl">
+                  <TestTube2 className="w-7 h-7 text-blue-500" />
                 </div>
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  Comprehensive test automation ecosystem for distributed SaaS platform with 15+ microservices
-                </p>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-foreground mb-2">
+                    Enterprise Microservices Test Automation Framework
+                  </h3>
+                  <p className="text-sm text-blue-500 font-medium">Core Achievement • 2020 - Present</p>
+                </div>
               </div>
-
-              {/* Bento Grid Layout */}
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-3.5 mb-5">
+              
+              <div className="space-y-4 mb-6">
+                <div>
+                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">The Challenge</h4>
+                  <p className="text-foreground">
+                    Testing complex SaaS platform with 15+ microservices, event-driven architecture, heterogeneous data stores (PostgreSQL, MSSQL, MongoDB, Citus), and critical business workflows requiring validation across distributed boundaries.
+                  </p>
+                </div>
                 
-                {/* Challenge Card - Spans full width on mobile, 5 cols on desktop */}
-                <div className="md:col-span-5 relative overflow-hidden group">
-                  <div className="absolute inset-0 bg-blue-500/5 rounded-xl" />
-                  <div className="relative p-4 border border-blue-500/20 rounded-xl backdrop-blur-sm h-full">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="p-1.5 bg-blue-500/10 rounded-lg border border-blue-500/20">
-                        <Target className="w-4 h-4 text-blue-400" />
-                      </div>
-                      <h4 className="text-base font-bold text-foreground/80">The Challenge</h4>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <div className="w-1.5 h-1.5 rounded-full bg-blue-400/60" />
-                        <span>15+ interconnected microservices</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <div className="w-1.5 h-1.5 rounded-full bg-blue-400/60" />
-                        <span>Event-driven NATS messaging</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <div className="w-1.5 h-1.5 rounded-full bg-blue-400/60" />
-                        <span>PostgreSQL + MongoDB + Citus</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <div className="w-1.5 h-1.5 rounded-full bg-blue-400/60" />
-                        <span>Complex distributed workflows</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <div className="w-1.5 h-1.5 rounded-full bg-blue-400/60" />
-                        <span>Multi-tenant architecture</span>
-                      </div>
-                    </div>
-                  </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">The Solution</h4>
+                  <p className="text-foreground">
+                    Built and maintained <strong>4 comprehensive test automation frameworks</strong> covering:
+                  </p>
+                  <ul className="space-y-2 mt-2 text-foreground">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2"></div>
+                      <span><strong>E2E Framework</strong> - Isolated Docker environments validating inter-service workflows and database state</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2"></div>
+                      <span><strong>API Test Suite</strong> - Automated endpoint validation, contract testing, and liveness checks</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2"></div>
+                      <span><strong>UI Regression Suite</strong> - BDD scenarios testing critical user journeys across the platform</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2"></div>
+                      <span><strong>Component Test Suite</strong> - React UI validation with mocked API integration</span>
+                    </li>
+                  </ul>
                 </div>
-
-                {/* Impact Metrics - 2x2 Grid, Spans 7 cols on desktop */}
-                <div className="md:col-span-7 grid grid-cols-2 gap-3.5">
-                  <div className="relative overflow-hidden">
-                    <div className="absolute inset-0 bg-blue-500/8 rounded-xl blur-lg" />
-                    <div className="relative p-3.5 bg-blue-500/5 border border-blue-500/20 rounded-xl backdrop-blur-sm text-center">
-                      <TrendingUp className="w-6 h-6 text-blue-400 mx-auto mb-1.5" />
-                      <div className="text-3xl font-bold text-foreground/80 mb-1">
-                        5d → 1d
-                      </div>
-                      <div className="text-xs text-muted-foreground font-medium">Release Cycle</div>
-                    </div>
-                  </div>
-
-                  <div className="relative overflow-hidden">
-                    <div className="absolute inset-0 bg-blue-500/8 rounded-xl blur-lg" />
-                    <div className="relative p-3.5 bg-blue-500/5 border border-blue-500/20 rounded-xl backdrop-blur-sm text-center">
-                      <Shield className="w-6 h-6 text-blue-400 mx-auto mb-1.5" />
-                      <div className="text-3xl font-bold text-foreground/80 mb-1">
-                        60+
-                      </div>
-                      <div className="text-xs text-muted-foreground font-medium">Bugs Pre-Production</div>
-                    </div>
-                  </div>
-
-                  <div className="relative overflow-hidden">
-                    <div className="absolute inset-0 bg-blue-500/8 rounded-xl blur-lg" />
-                    <div className="relative p-3.5 bg-blue-500/5 border border-blue-500/20 rounded-xl backdrop-blur-sm text-center">
-                      <TestTube2 className="w-6 h-6 text-blue-400 mx-auto mb-1.5" />
-                      <div className="text-3xl font-bold text-foreground/80 mb-1">
-                        1200+
-                      </div>
-                      <div className="text-xs text-muted-foreground font-medium">Test Scenarios</div>
-                    </div>
-                  </div>
-
-                  <div className="relative overflow-hidden">
-                    <div className="absolute inset-0 bg-blue-500/8 rounded-xl blur-lg" />
-                    <div className="relative p-3.5 bg-blue-500/5 border border-blue-500/20 rounded-xl backdrop-blur-sm text-center">
-                      <Workflow className="w-6 h-6 text-blue-400 mx-auto mb-1.5" />
-                      <div className="text-3xl font-bold text-foreground/80 mb-1">
-                        10+
-                      </div>
-                      <div className="text-xs text-muted-foreground font-medium">Daily Workflows</div>
-                    </div>
-                  </div>
+                
+                <div>
+                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">Impact</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground"><strong>1200+ automated test scenarios</strong> across 4 comprehensive test suites validating API, UI, E2E, and component layers</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground"><strong>Isolated E2E environment</strong> spinning up entire microservice ecosystem using GitHub Actions with self-hosted runners</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground"><strong>Multi-tenant validation</strong> with scheduled regression runs (10+ daily workflows) across dev/qa environments</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground"><strong>Complete CI/CD integration</strong> with CircleCI, GitHub Actions, Jira Xray reporting, and multi-platform test execution</span>
+                    </li>
+                  </ul>
                 </div>
-
-                {/* 4 Test Frameworks - Each gets equal space */}
-                <div className="md:col-span-3 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-blue-500/5 rounded-xl" />
-                  <div className="relative p-3.5 border border-blue-500/20 rounded-xl backdrop-blur-sm h-full flex flex-col">
-                    <div className="flex items-center gap-1.5 mb-1.5">
-                      <div className="p-1.5 bg-blue-500/10 rounded-lg border border-blue-500/20">
-                        <Container className="w-4 h-4 text-blue-400" />
-                      </div>
-                      <div>
-                        <div className="font-bold text-foreground/80 text-sm">E2E Framework</div>
-                        <div className="text-xs text-blue-500/90">Docker-Orchestrated</div>
-                      </div>
-                    </div>
-                    <p className="text-xs text-muted-foreground leading-relaxed flex-1">
-                      Full system validation with containerized services, event flows, and database state verification
-                    </p>
-                    <div className="mt-2.5 flex items-center gap-1.5 text-xs text-blue-500">
-                      <CheckCircle2 className="w-3.5 h-3.5" />
-                      <span className="font-semibold">350+ scenarios</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="md:col-span-3 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-blue-500/5 rounded-xl" />
-                  <div className="relative p-3.5 border border-blue-500/20 rounded-xl backdrop-blur-sm h-full flex flex-col">
-                    <div className="flex items-center gap-1.5 mb-1.5">
-                      <div className="p-1.5 bg-blue-500/10 rounded-lg border border-blue-500/20">
-                        <Zap className="w-4 h-4 text-blue-400" />
-                      </div>
-                      <div>
-                        <div className="font-bold text-foreground/80 text-sm">API Test Suite</div>
-                        <div className="text-xs text-blue-500/90">REST & GraphQL</div>
-                      </div>
-                    </div>
-                    <p className="text-xs text-muted-foreground leading-relaxed flex-1">
-                      Comprehensive endpoint testing, contract validation, and microservice integration verification
-                    </p>
-                    <div className="mt-2.5 flex items-center gap-1.5 text-xs text-blue-500">
-                      <CheckCircle2 className="w-3.5 h-3.5" />
-                      <span className="font-semibold">500+ tests</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="md:col-span-3 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-blue-500/5 rounded-xl" />
-                  <div className="relative p-3.5 border border-blue-500/20 rounded-xl backdrop-blur-sm h-full flex flex-col">
-                    <div className="flex items-center gap-1.5 mb-1.5">
-                      <div className="p-1.5 bg-blue-500/10 rounded-lg border border-blue-500/20">
-                        <Layout className="w-4 h-4 text-blue-400" />
-                      </div>
-                      <div>
-                        <div className="font-bold text-foreground/80 text-sm">UI Regression</div>
-                        <div className="text-xs text-blue-500/90">BDD Scenarios</div>
-                      </div>
-                    </div>
-                    <p className="text-xs text-muted-foreground leading-relaxed flex-1">
-                      Behavior-driven user journey testing with Gherkin scenarios covering critical workflows
-                    </p>
-                    <div className="mt-2.5 flex items-center gap-1.5 text-xs text-blue-500">
-                      <CheckCircle2 className="w-3.5 h-3.5" />
-                      <span className="font-semibold">250+ scenarios</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="md:col-span-3 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-blue-500/5 rounded-xl" />
-                  <div className="relative p-3.5 border border-blue-500/20 rounded-xl backdrop-blur-sm h-full flex flex-col">
-                    <div className="flex items-center gap-1.5 mb-1.5">
-                      <div className="p-1.5 bg-blue-500/10 rounded-lg border border-blue-500/20">
-                        <Code2 className="w-4 h-4 text-blue-400" />
-                      </div>
-                      <div>
-                        <div className="font-bold text-foreground/80 text-sm">Component Tests</div>
-                        <div className="text-xs text-blue-500/90">React + Cypress</div>
-                      </div>
-                    </div>
-                    <p className="text-xs text-muted-foreground leading-relaxed flex-1">
-                      Isolated React component testing with Cypress Component Testing for UI validation
-                    </p>
-                    <div className="mt-2.5 flex items-center gap-1.5 text-xs text-blue-500">
-                      <CheckCircle2 className="w-3.5 h-3.5" />
-                      <span className="font-semibold">100+ components</span>
-                    </div>
-                  </div>
-                </div>
-
               </div>
-
-              {/* Tech Stack */}
-              <div className="pt-4 border-t border-blue-500/15">
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-blue-500/10 text-blue-500/90 border-blue-500/25">C# / .NET 8-9</Badge>
-                  <Badge className="bg-blue-500/10 text-blue-500/90 border-blue-500/25">xUnit</Badge>
-                  <Badge className="bg-blue-500/10 text-blue-500/90 border-blue-500/25">SpecFlow</Badge>
-                  <Badge className="bg-blue-500/10 text-blue-500/90 border-blue-500/25">RestSharp</Badge>
-                  <Badge className="bg-blue-500/10 text-blue-500/90 border-blue-500/25">Selenium</Badge>
-                  <Badge className="bg-blue-500/10 text-blue-500/90 border-blue-500/25">Cypress</Badge>
-                  <Badge className="bg-blue-500/10 text-blue-500/90 border-blue-500/25">Docker</Badge>
-                  <Badge className="bg-blue-500/10 text-blue-500/90 border-blue-500/25">NATS</Badge>
-                  <Badge className="bg-blue-500/10 text-blue-500/90 border-blue-500/25">PostgreSQL</Badge>
-                  <Badge className="bg-blue-500/10 text-blue-500/90 border-blue-500/25">MongoDB</Badge>
-                  <Badge className="bg-blue-500/10 text-blue-500/90 border-blue-500/25">CircleCI</Badge>
-                  <Badge className="bg-blue-500/10 text-blue-500/90 border-blue-500/25">GitHub Actions</Badge>
-                </div>
+              
+              <div className="flex flex-wrap gap-2">
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">C# / .NET 8-9</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">xUnit</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">SpecFlow</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">RestSharp</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">Selenium WebDriver</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">Cypress</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">Docker Compose</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">NATS JetStream</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">PostgreSQL</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">MongoDB</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">CircleCI</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">GitHub Actions</Badge>
+                <Badge className="bg-blue-500/10 text-blue-500 border-blue-500/30">Jira Xray</Badge>
               </div>
             </div>
           </motion.div>
@@ -783,173 +649,138 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.001, delay: 0.2 }}
-            className="relative overflow-hidden"
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="relative overflow-hidden bg-gradient-to-br from-violet-500/10 via-purple-500/5 to-transparent border border-violet-500/20 rounded-2xl p-8 hover:border-violet-500/40 transition-all group"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 via-background to-purple-500/5 rounded-3xl blur-3xl" />
-            <div className="absolute top-0 right-0 w-96 h-96 bg-violet-500/8 rounded-full blur-[100px] -z-10" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/8 rounded-full blur-[100px] -z-10" />
+            <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-30 transition-opacity">
+              <Sparkles className="w-16 h-16 text-violet-500" />
+            </div>
             
-            <div className="relative bg-gradient-to-br from-violet-500/5 via-background to-purple-500/5 border border-violet-500/20 rounded-3xl p-5 backdrop-blur-sm">
-              <div className="mb-5">
-                <div className="flex items-start justify-between mb-3">
-                  <div className="flex items-center gap-2.5">
-                    <div className="p-2 bg-violet-500/10 rounded-lg border border-violet-500/20">
-                      <Brain className="w-6 h-6 text-violet-400" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground mb-1">
-                        AI-Assisted Test Generation
-                      </h3>
-                      <p className="text-sm text-violet-400 font-semibold flex items-center gap-2">
-                        <Sparkles className="w-4 h-4" />
-                        Innovation Initiative • 2025 - Present
-                      </p>
-                    </div>
-                  </div>
+            <div className="relative z-10">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="p-3 bg-violet-500/20 rounded-xl">
+                  <Brain className="w-7 h-7 text-violet-500" />
                 </div>
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  Leveraging AI to accelerate test creation and reduce maintenance overhead
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 mb-5">
-                <div className="relative overflow-hidden">
-                  <div className="absolute inset-0 bg-violet-500/5 rounded-xl" />
-                  <div className="relative p-4 border border-violet-500/20 rounded-xl backdrop-blur-sm h-full">
-                    <div className="flex items-center gap-1.5 mb-2">
-                      <div className="p-1.5 bg-violet-500/10 rounded-lg border border-violet-500/20">
-                        <Zap className="w-4 h-4 text-violet-400" />
-                      </div>
-                      <h4 className="text-base font-bold text-foreground/80">60% Faster</h4>
-                    </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      AI-generated test scenarios from requirements, reducing manual test creation time significantly
-                    </p>
-                  </div>
-                </div>
-
-                <div className="relative overflow-hidden">
-                  <div className="absolute inset-0 bg-violet-500/5 rounded-xl" />
-                  <div className="relative p-4 border border-violet-500/20 rounded-xl backdrop-blur-sm h-full">
-                    <div className="flex items-center gap-1.5 mb-2">
-                      <div className="p-1.5 bg-violet-500/10 rounded-lg border border-violet-500/20">
-                        <Shield className="w-4 h-4 text-violet-400" />
-                      </div>
-                      <h4 className="text-base font-bold text-foreground/80">40% Less Flaky</h4>
-                    </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Self-healing test scripts with AI-powered selector optimization reducing test brittleness
-                    </p>
-                  </div>
-                </div>
-
-                <div className="relative overflow-hidden md:col-span-2">
-                  <div className="absolute inset-0 bg-violet-500/5 rounded-xl" />
-                  <div className="relative p-4 border border-violet-500/20 rounded-xl backdrop-blur-sm">
-                    <div className="flex items-center gap-1.5 mb-2">
-                      <div className="p-1.5 bg-violet-500/10 rounded-lg border border-violet-500/20">
-                        <BookOpen className="w-4 h-4 text-violet-400" />
-                      </div>
-                      <h4 className="text-base font-bold text-foreground/80">Automated BDD Generation</h4>
-                    </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Gherkin scenarios automatically created from Jira tickets, bridging business requirements and technical implementation
-                    </p>
-                  </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-foreground mb-2">
+                    AI-Assisted Test Generation & Maintenance
+                  </h3>
+                  <p className="text-sm text-violet-500 font-medium">Innovation Initiative • 2023 - Present</p>
                 </div>
               </div>
-
-              <div className="pt-4 border-t border-violet-500/15">
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-violet-500/10 text-violet-400/90 border-violet-500/25">GitHub Copilot</Badge>
-                  <Badge className="bg-violet-500/10 text-violet-400/90 border-violet-500/25">OpenAI API</Badge>
-                  <Badge className="bg-violet-500/10 text-violet-400/90 border-violet-500/25">Python</Badge>
-                  <Badge className="bg-violet-500/10 text-violet-400/90 border-violet-500/25">Selenium</Badge>
-                  <Badge className="bg-violet-500/10 text-violet-400/90 border-violet-500/25">Cypress</Badge>
-                  <Badge className="bg-violet-500/10 text-violet-400/90 border-violet-500/25">Jira Xray</Badge>
+              
+              <div className="space-y-4 mb-6">
+                <div>
+                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">The Challenge</h4>
+                  <p className="text-foreground">
+                    Manual test case creation consuming 40% of QA time, plus constant maintenance overhead from UI/API changes causing brittle tests.
+                  </p>
                 </div>
+                
+                <div>
+                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">The Solution</h4>
+                  <p className="text-foreground">
+                    Integrated GitHub Copilot and custom AI workflows for intelligent test generation from requirements, self-healing test scripts, and automated Gherkin scenario creation from Jira tickets.
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">Impact</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-violet-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground"><strong>60% reduction</strong> in test creation time through AI-generated test scenarios</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-violet-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground"><strong>40% fewer flaky tests</strong> via AI-powered selector optimization and self-healing mechanisms</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-violet-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground"><strong>Automated BDD scenarios</strong> generated from requirements, bridging business-technical gap</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-2">
+                <Badge className="bg-violet-500/10 text-violet-500 border-violet-500/30">GitHub Copilot</Badge>
+                <Badge className="bg-violet-500/10 text-violet-500 border-violet-500/30">OpenAI API</Badge>
+                <Badge className="bg-violet-500/10 text-violet-500 border-violet-500/30">Python</Badge>
+                <Badge className="bg-violet-500/10 text-violet-500 border-violet-500/30">Selenium</Badge>
+                <Badge className="bg-violet-500/10 text-violet-500 border-violet-500/30">Cypress</Badge>
+                <Badge className="bg-violet-500/10 text-violet-500 border-violet-500/30">Jira Xray</Badge>
               </div>
             </div>
           </motion.div>
 
-          {/* Project 3: Desktop Test Automation Foundation */}
+          {/* Project 3: Multi-Layer Testing Foundation */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.001, delay: 0.3 }}
-            className="relative overflow-hidden"
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="relative overflow-hidden bg-gradient-to-br from-orange-500/10 via-amber-500/5 to-transparent border border-orange-500/20 rounded-2xl p-8 hover:border-orange-500/40 transition-all group"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-background to-amber-500/5 rounded-3xl blur-3xl" />
-            <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/8 rounded-full blur-[100px] -z-10" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-amber-500/8 rounded-full blur-[100px] -z-10" />
+            <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-30 transition-opacity">
+              <Layers className="w-16 h-16 text-orange-500" />
+            </div>
             
-            <div className="relative bg-gradient-to-br from-orange-500/5 via-background to-amber-500/5 border border-orange-500/20 rounded-3xl p-5 backdrop-blur-sm">
-              <div className="mb-5">
-                <div className="flex items-start justify-between mb-3">
-                  <div className="flex items-center gap-2.5">
-                    <div className="p-2 bg-orange-500/10 rounded-lg border border-orange-500/20">
-                      <Layers className="w-6 h-6 text-orange-400" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground mb-1">
-                        Desktop Test Automation
-                      </h3>
-                      <p className="text-sm text-orange-400 font-semibold flex items-center gap-2">
-                        <CheckCircle2 className="w-4 h-4" />
-                        Foundation Work • 2018 - 2020
-                      </p>
-                    </div>
-                  </div>
+            <div className="relative z-10">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="p-3 bg-orange-500/20 rounded-xl">
+                  <Code2 className="w-7 h-7 text-orange-500" />
                 </div>
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  Built comprehensive desktop test automation for enterprise application across 15+ releases
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 mb-5">
-                <div className="relative overflow-hidden">
-                  <div className="absolute inset-0 bg-orange-500/8 rounded-xl blur-lg" />
-                  <div className="relative p-4 border border-orange-500/20 rounded-xl backdrop-blur-sm h-full">
-                    <div className="flex items-center gap-1.5 mb-2">
-                      <div className="p-1.5 bg-orange-500/10 rounded-lg border border-orange-500/20">
-                        <TestTube2 className="w-4 h-4 text-orange-400" />
-                      </div>
-                      <h4 className="text-base font-bold text-foreground/80">150+</h4>
-                    </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Test cases automated across 15+ releases for enterprise desktop application
-                    </p>
-                  </div>
-                </div>
-
-                <div className="relative overflow-hidden">
-                  <div className="absolute inset-0 bg-orange-500/8 rounded-xl blur-lg" />
-                  <div className="relative p-4 border border-orange-500/20 rounded-xl backdrop-blur-sm h-full">
-                    <div className="flex items-center gap-1.5 mb-2">
-                      <div className="p-1.5 bg-orange-500/10 rounded-lg border border-orange-500/20">
-                        <Target className="w-4 h-4 text-orange-400" />
-                      </div>
-                      <h4 className="text-base font-bold text-foreground/80">100+</h4>
-                    </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Bugs discovered and fixed before reaching production environments
-                    </p>
-                  </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-foreground mb-2">
+                    Desktop Test Automation Foundation
+                  </h3>
+                  <p className="text-sm text-orange-500 font-medium">Foundation Work • 2018 - 2020</p>
                 </div>
               </div>
-
-              <div className="pt-4 border-t border-orange-500/15">
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-orange-500/10 text-orange-400/90 border-orange-500/25">C#</Badge>
-                  <Badge className="bg-orange-500/10 text-orange-400/90 border-orange-500/25">Desktop Automation</Badge>
-                  <Badge className="bg-orange-500/10 text-orange-400/90 border-orange-500/25">WinForms</Badge>
-                  <Badge className="bg-orange-500/10 text-orange-400/90 border-orange-500/25">Excel Integration</Badge>
-                  <Badge className="bg-orange-500/10 text-orange-400/90 border-orange-500/25">MSTest</Badge>
-                  <Badge className="bg-orange-500/10 text-orange-400/90 border-orange-500/25">Agile/Scrum</Badge>
-                  <Badge className="bg-orange-500/10 text-orange-400/90 border-orange-500/25">Azure DevOps</Badge>
+              
+              <div className="space-y-4 mb-6">
+                <div>
+                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">The Challenge</h4>
+                  <p className="text-foreground">
+                    Maintaining and expanding existing test automation for an enterprise desktop application while supporting 15+ releases with comprehensive test coverage and continuous quality improvements.
+                  </p>
                 </div>
+                
+                <div>
+                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">The Solution</h4>
+                  <p className="text-foreground">
+                    Enhanced and expanded desktop test automation automating both application workflows and external integrations (Excel operations). Participated in all Scrum events, creating comprehensive test strategies and plans. Handled complete testing lifecycle from test creation to execution during PBI & SIT testing.
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">Impact</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground"><strong>150+ test cases automated</strong> covering desktop application and external integrations</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground"><strong>Expanded automation scope</strong> by incorporating 100+ additional test cases in completely new areas</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground"><strong>Streamlined testing</strong> for 15+ releases with comprehensive test strategies and plans</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-2">
+                <Badge className="bg-orange-500/10 text-orange-500 border-orange-500/30">C#</Badge>
+                <Badge className="bg-orange-500/10 text-orange-500 border-orange-500/30">Desktop Automation</Badge>
+                <Badge className="bg-orange-500/10 text-orange-500 border-orange-500/30">WinForms</Badge>
+                <Badge className="bg-orange-500/10 text-orange-500 border-orange-500/30">Excel Integration</Badge>
+                <Badge className="bg-orange-500/10 text-orange-500 border-orange-500/30">MSTest</Badge>
+                <Badge className="bg-orange-500/10 text-orange-500 border-orange-500/30">Agile/Scrum</Badge>
+                <Badge className="bg-orange-500/10 text-orange-500 border-orange-500/30">Azure devops</Badge>
               </div>
             </div>
           </motion.div>
