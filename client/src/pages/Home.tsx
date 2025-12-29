@@ -518,40 +518,40 @@ export default function Home() {
           </div>
 
           <div
-            className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-purple-500/5 to-blue-500/10 border border-primary/30 rounded-3xl p-12 backdrop-blur-sm group hover:border-primary/50 transition-all duration-500"
+            className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-purple-500/5 to-blue-500/10 border border-primary/30 rounded-2xl p-8 md:p-10 backdrop-blur-sm group hover:border-primary/50 transition-all duration-500 mb-12"
           >
             {/* Animated background elements */}
-            <div className="absolute top-0 right-0 w-40 h-40 bg-primary/10 rounded-full blur-3xl animate-pulse-slow"></div>
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-pulse-slow"></div>
             <div
-              className="absolute bottom-0 left-0 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow"
+              className="absolute bottom-0 left-0 w-36 h-36 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow"
               style={{ animationDelay: "1s" }}
             ></div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-blue-500/5 rounded-full blur-3xl"></div>
 
             <div className="relative z-10">
-              <div className="flex items-start justify-between mb-8">
+              <div className="flex items-start justify-between mb-6">
                 <div
                   className="text-primary/40 group-hover:text-primary/60 transition-colors duration-500"
                 >
                   <svg
-                    className="w-16 h-16"
+                    className="w-12 h-12"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg>
                 </div>
-                <div className="h-1 w-24 bg-gradient-to-r from-primary/50 to-transparent rounded-full"></div>
+                <div className="h-1 w-20 bg-gradient-to-r from-primary/50 to-transparent rounded-full"></div>
               </div>
 
-              <div className="space-y-4">
-                <p className="text-2xl md:text-4xl font-display font-bold text-foreground leading-tight">
+              <div className="space-y-3">
+                <p className="text-xl md:text-3xl font-display font-bold text-foreground leading-tight">
                   Test automation isn't just code
                 </p>
-                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                   — it's{" "}
                   <span className="relative inline-block">
-                    <span className="relative z-10 text-primary font-bold px-3 py-1">
+                    <span className="relative z-10 text-primary font-bold px-2 py-1">
                       trust, speed, and peace of mind
                     </span>
                     <span className="absolute inset-0 bg-primary/20 blur-xl rounded-lg"></span>
@@ -561,7 +561,7 @@ export default function Home() {
               </div>
 
               <div
-                className="mt-8 flex items-center gap-3"
+                className="mt-6 flex items-center gap-3"
               >
                 <div className="h-px flex-1 bg-gradient-to-r from-primary/30 via-primary/10 to-transparent"></div>
                 <div className="flex items-center gap-1.5">
