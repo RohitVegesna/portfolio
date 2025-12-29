@@ -29,6 +29,7 @@ import {
   Eye,
   Wrench,
   Award,
+  TrendingUp,
 } from "lucide-react";
 import heroBg from "@assets/generated_images/modern_tech_gradient_abstract_background.png";
 import { Badge } from "@/components/ui/badge";
@@ -570,59 +571,82 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="space-y-4 mb-6">
-                <div>
-                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">The Challenge</h4>
-                  <p className="text-foreground">
-                    Testing complex SaaS platform with 15+ microservices, event-driven architecture, heterogeneous data stores (PostgreSQL, MSSQL, MongoDB, Citus), and critical business workflows requiring validation across distributed boundaries.
-                  </p>
+              <div className="space-y-6 mb-6">
+                {/* Challenge - Visual Icon Card */}
+                <div className="flex items-start gap-4 p-4 bg-blue-500/5 rounded-lg">
+                  <div className="p-2 bg-blue-500/20 rounded-lg flex-shrink-0">
+                    <Target className="w-5 h-5 text-blue-500" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-semibold text-blue-500 mb-2">The Challenge</h4>
+                    <p className="text-sm text-muted-foreground">
+                      15+ microservices • Event-driven architecture • Multiple databases • Distributed workflows
+                    </p>
+                  </div>
                 </div>
                 
+                {/* 4 Test Suites - Visual Grid */}
                 <div>
-                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">The Solution</h4>
-                  <p className="text-foreground">
-                    Built and maintained <strong>4 comprehensive test automation frameworks</strong> covering:
-                  </p>
-                  <ul className="space-y-2 mt-2 text-foreground">
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2"></div>
-                      <span><strong>E2E Framework</strong> - Isolated Docker environments validating inter-service workflows and database state</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2"></div>
-                      <span><strong>API Test Suite</strong> - Automated endpoint validation, contract testing, and liveness checks</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2"></div>
-                      <span><strong>UI Regression Suite</strong> - BDD scenarios testing critical user journeys across the platform</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2"></div>
-                      <span><strong>Component Test Suite</strong> - React UI validation with mocked API integration</span>
-                    </li>
-                  </ul>
+                  <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <Layers className="w-4 h-4 text-blue-500" />
+                    4 Comprehensive Test Automation Frameworks
+                  </h4>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="p-3 bg-blue-500/5 rounded-lg hover:bg-blue-500/10 transition-colors">
+                      <div className="flex items-center gap-2 mb-1">
+                        <Container className="w-4 h-4 text-blue-500" />
+                        <span className="font-semibold text-sm text-foreground">E2E Framework</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground">Docker-orchestrated validation</p>
+                    </div>
+                    <div className="p-3 bg-blue-500/5 rounded-lg hover:bg-blue-500/10 transition-colors">
+                      <div className="flex items-center gap-2 mb-1">
+                        <Zap className="w-4 h-4 text-blue-500" />
+                        <span className="font-semibold text-sm text-foreground">API Suite</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground">Endpoint & contract testing</p>
+                    </div>
+                    <div className="p-3 bg-blue-500/5 rounded-lg hover:bg-blue-500/10 transition-colors">
+                      <div className="flex items-center gap-2 mb-1">
+                        <Layout className="w-4 h-4 text-blue-500" />
+                        <span className="font-semibold text-sm text-foreground">UI Regression</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground">BDD user journey testing</p>
+                    </div>
+                    <div className="p-3 bg-blue-500/5 rounded-lg hover:bg-blue-500/10 transition-colors">
+                      <div className="flex items-center gap-2 mb-1">
+                        <Code2 className="w-4 h-4 text-blue-500" />
+                        <span className="font-semibold text-sm text-foreground">Component Tests</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground">React UI validation</p>
+                    </div>
+                  </div>
                 </div>
                 
+                {/* Impact - Visual Metric Cards */}
                 <div>
-                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">Impact</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground"><strong>1200+ automated test scenarios</strong> across 4 comprehensive test suites validating API, UI, E2E, and component layers</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground"><strong>Isolated E2E environment</strong> spinning up entire microservice ecosystem using GitHub Actions with self-hosted runners</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground"><strong>Multi-tenant validation</strong> with scheduled regression runs (10+ daily workflows) across dev/qa environments</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground"><strong>Complete CI/CD integration</strong> with CircleCI, GitHub Actions, Jira Xray reporting, and multi-platform test execution</span>
-                    </li>
-                  </ul>
+                  <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <TrendingUp className="w-4 h-4 text-blue-500" />
+                    Business Impact
+                  </h4>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="text-center p-4 bg-gradient-to-br from-blue-500/10 to-cyan-500/5 rounded-lg">
+                      <div className="text-3xl font-bold text-blue-500 mb-1">5d → 1d</div>
+                      <div className="text-xs text-muted-foreground">Release Cycle Time</div>
+                    </div>
+                    <div className="text-center p-4 bg-gradient-to-br from-blue-500/10 to-cyan-500/5 rounded-lg">
+                      <div className="text-3xl font-bold text-blue-500 mb-1">60+</div>
+                      <div className="text-xs text-muted-foreground">Bugs Caught Pre-Production</div>
+                    </div>
+                    <div className="text-center p-4 bg-gradient-to-br from-blue-500/10 to-cyan-500/5 rounded-lg">
+                      <div className="text-3xl font-bold text-blue-500 mb-1">1200+</div>
+                      <div className="text-xs text-muted-foreground">Automated Test Scenarios</div>
+                    </div>
+                    <div className="text-center p-4 bg-gradient-to-br from-blue-500/10 to-cyan-500/5 rounded-lg">
+                      <div className="text-3xl font-bold text-blue-500 mb-1">10+</div>
+                      <div className="text-xs text-muted-foreground">Daily Test Workflows</div>
+                    </div>
+                  </div>
                 </div>
               </div>
               
@@ -665,7 +689,7 @@ export default function Home() {
                   <h3 className="text-2xl font-bold text-foreground mb-2">
                     AI-Assisted Test Generation & Maintenance
                   </h3>
-                  <p className="text-sm text-violet-500 font-medium">Innovation Initiative • 2023 - Present</p>
+                  <p className="text-sm text-violet-500 font-medium">Innovation Initiative • 2025 - Present</p>
                 </div>
               </div>
               
@@ -740,36 +764,19 @@ export default function Home() {
               </div>
               
               <div className="space-y-4 mb-6">
-                <div>
-                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">The Challenge</h4>
-                  <p className="text-foreground">
-                    Maintaining and expanding existing test automation for an enterprise desktop application while supporting 15+ releases with comprehensive test coverage and continuous quality improvements.
-                  </p>
-                </div>
+                <p className="text-foreground leading-relaxed">
+                  Enhanced desktop test automation for enterprise application, automating workflows and external integrations. Led complete testing lifecycle across 15+ releases.
+                </p>
                 
-                <div>
-                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">The Solution</h4>
-                  <p className="text-foreground">
-                    Enhanced and expanded desktop test automation automating both application workflows and external integrations (Excel operations). Participated in all Scrum events, creating comprehensive test strategies and plans. Handled complete testing lifecycle from test creation to execution during PBI & SIT testing.
-                  </p>
-                </div>
-                
-                <div>
-                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">Impact</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground"><strong>150+ test cases automated</strong> covering desktop application and external integrations</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground"><strong>Expanded automation scope</strong> by incorporating 100+ additional test cases in completely new areas</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground"><strong>Streamlined testing</strong> for 15+ releases with comprehensive test strategies and plans</span>
-                    </li>
-                  </ul>
+                <div className="grid grid-cols-2 gap-4 mt-4">
+                  <div className="text-center p-3 bg-orange-500/10 rounded-lg">
+                    <div className="text-2xl font-bold text-orange-500">150+</div>
+                    <div className="text-xs text-muted-foreground">Test Cases Automated</div>
+                  </div>
+                  <div className="text-center p-3 bg-orange-500/10 rounded-lg">
+                    <div className="text-2xl font-bold text-orange-500">100+</div>
+                    <div className="text-xs text-muted-foreground">Bugs Discovered</div>
+                  </div>
                 </div>
               </div>
               
