@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "./testimonials-animation.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -150,6 +149,24 @@
 
   .animate-pulse-slow {
     animation: pulse-slow 3s ease-in-out infinite;
+  }
+
+  @keyframes scroll-testimonials {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll-testimonials {
+    animation: scroll-testimonials 60s linear infinite;
+    will-change: transform;
+  }
+
+  .pause-animation:hover {
+    animation-play-state: paused;
   }
 
   .scrollbar-hide {
