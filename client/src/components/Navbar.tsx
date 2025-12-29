@@ -22,62 +22,81 @@ export default function Navbar() {
   const [isScrollingToTop, setIsScrollingToTop] = useState(false);
 
   useEffect(() => {
+    let scrollTimeout: NodeJS.Timeout;
+    let rafId: number;
+
     const handleScroll = () => {
-      // Don't update active section while scrolling to top
-      if (isScrollingToTop) return;
-      
-      setShowScrollTop(window.scrollY > 400);
+      // Cancel any pending animation frame
+      if (rafId) cancelAnimationFrame(rafId);
 
-      // Detect active section based on which section is most visible in viewport
-      const sections = [
-        "about",
-        "ai-testing",
-        "foundation",
-        "advanced-testing",
-        "microservices",
-        "shift-left",
-        "test-strategy",
-        "tools",
-        "experience",
-        "contact",
-      ];
-
-      // Check if we're before the first section (About)
-      const aboutElement = document.getElementById("about");
-      if (aboutElement) {
-        const aboutTop = aboutElement.offsetTop;
-        const navbarHeight = 100;
+      // Use requestAnimationFrame for smooth updates
+      rafId = requestAnimationFrame(() => {
+        // Don't update active section while scrolling to top
+        if (isScrollingToTop) return;
         
-        // If we haven't reached the About section yet, clear active section
-        if (window.scrollY + navbarHeight < aboutTop) {
-          setActiveSection("");
-          return;
-        }
-      }
+        setShowScrollTop(window.scrollY > 400);
 
-      const viewportMiddle = window.scrollY + window.innerHeight / 3; // Check top third of viewport
+        // Debounce section detection for better performance
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          // Detect active section based on which section is most visible in viewport
+          const sections = [
+            "about",
+            "ai-testing",
+            "foundation",
+            "advanced-testing",
+            "microservices",
+            "shift-left",
+            "test-strategy",
+            "tools",
+            "experience",
+            "contact",
+          ];
 
-      let currentSection = "";
-
-      for (const sectionId of sections) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          const sectionBottom = offsetTop + offsetHeight;
-
-          if (viewportMiddle >= offsetTop && viewportMiddle < sectionBottom) {
-            currentSection = sectionId;
-            break;
+          // Check if we're before the first section (About)
+          const aboutElement = document.getElementById("about");
+          if (aboutElement) {
+            const aboutTop = aboutElement.offsetTop;
+            const navbarHeight = 100;
+            
+            // If we haven't reached the About section yet, clear active section
+            if (window.scrollY + navbarHeight < aboutTop) {
+              setActiveSection("");
+              return;
+            }
           }
-        }
-      }
 
-      setActiveSection(currentSection);
+          const viewportMiddle = window.scrollY + window.innerHeight / 3; // Check top third of viewport
+
+          let currentSection = "";
+
+          for (const sectionId of sections) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+              const { offsetTop, offsetHeight } = element;
+              const sectionBottom = offsetTop + offsetHeight;
+
+              if (viewportMiddle >= offsetTop && viewportMiddle < sectionBottom) {
+                currentSection = sectionId;
+                break;
+              }
+            }
+          }
+
+          setActiveSection(currentSection);
+        }, 50); // Debounce by 50ms
+      });
     };
 
-    window.addEventListener("scroll", handleScroll);
+    // Use passive listener for better scroll performance
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll(); // Call once on mount
-    return () => window.removeEventListener("scroll", handleScroll);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+      clearTimeout(scrollTimeout);
+    };
   }, [isScrollingToTop]);
 
   const scrollToTop = () => {
