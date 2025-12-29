@@ -42,6 +42,10 @@ function ExperienceSection({ fadeInUp }: { fadeInUp: any }) {
     <section id="experience" className="py-20 container mx-auto px-4">
       <motion.h2
         {...fadeInUp}
+         initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.1 }} 
         className="text-3xl md:text-4xl font-display font-bold mb-16 flex items-center gap-4 justify-center"
       >
         <span className="w-16 h-[2px] bg-gradient-to-r from-transparent to-primary"></span>
@@ -106,68 +110,6 @@ function ExperienceSection({ fadeInUp }: { fadeInUp: any }) {
             </div>
           </motion.div>
         ))}
-      </div>
-
-      {/* Awards & Recognition */}
-      <div
-        className="mt-16 p-8 border border-primary/20 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent max-w-5xl mx-auto"
-      >
-        <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
-          <Target className="w-7 h-7 text-primary" />
-          Awards & Recognition
-        </h3>
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="flex items-start gap-3">
-            <div className="p-2 bg-primary/20 rounded-lg flex-shrink-0">
-              <Zap className="w-5 h-5 text-primary" />
-            </div>
-            <div>
-              <p className="font-semibold text-foreground">
-                Best Employee Award
-              </p>
-              <p className="text-sm text-muted-foreground">
-                3 times across Ericsson & TCS
-              </p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3">
-            <div className="p-2 bg-primary/20 rounded-lg flex-shrink-0">
-              <Shield className="w-5 h-5 text-primary" />
-            </div>
-            <div>
-              <p className="font-semibold text-foreground">Best Team Award</p>
-              <p className="text-sm text-muted-foreground">
-                Ericsson Operations Team
-              </p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3">
-            <div className="p-2 bg-primary/20 rounded-lg flex-shrink-0">
-              <BookOpen className="w-5 h-5 text-primary" />
-            </div>
-            <div>
-              <p className="font-semibold text-foreground">
-                Service Management Diploma
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Ericsson Certification
-              </p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3">
-            <div className="p-2 bg-primary/20 rounded-lg flex-shrink-0">
-              <CheckCircle2 className="w-5 h-5 text-primary" />
-            </div>
-            <div>
-              <p className="font-semibold text-foreground">
-                PSM I & Azure Fundamentals
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Professional Certifications
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
@@ -820,7 +762,12 @@ export default function Home() {
       
       {/* Technology Ecosystem */}
       <section id="tools" className="py-20 bg-muted/5 border-y border-white/5">
-        <motion.div {...fadeInUp} className="max-w-6xl mx-auto container px-4">
+        <motion.div {...fadeInUp}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.1 }}        
+         className="max-w-6xl mx-auto container px-4">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 flex items-center gap-4 justify-center">
             <span className="w-16 h-[2px] bg-gradient-to-r from-transparent to-primary"></span>
             Technology Ecosystem
@@ -1036,7 +983,9 @@ export default function Home() {
 
             <TabsContent value="experience" className="mt-0"><div>
       {/* Experience */}
-      <ExperienceSection fadeInUp={fadeInUp} />
+      <ExperienceSection fadeInUp={fadeInUp} 
+      
+      />
       </div></TabsContent>
           </Tabs>
         </div>
