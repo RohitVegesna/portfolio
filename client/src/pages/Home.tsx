@@ -357,7 +357,7 @@ export default function Home() {
                 I architect test automation that catches bugs before deployment
               </p>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                11+ years building comprehensive test frameworks for distributed microservices • Pre-merge validation preventing production issues • AI-powered test automation reducing manual effort by 60%
+                Specializing in comprehensive test frameworks for distributed microservices • AI-powered automation reducing manual effort by 60%
               </p>
             </div>
 
