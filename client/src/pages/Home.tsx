@@ -573,17 +573,17 @@ export default function Home() {
               <div className="space-y-4 mb-6">
                 <div>
                   <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">The Challenge</h4>
-                  <p className="text-foreground">
+                  <p className="text-base text-foreground">
                     Testing complex SaaS platform with 15+ microservices, event-driven architecture, heterogeneous data stores (PostgreSQL, MSSQL, MongoDB, Citus), and critical business workflows requiring validation across distributed boundaries.
                   </p>
                 </div>
                 
                 <div>
                   <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">The Solution</h4>
-                  <p className="text-foreground">
+                  <p className="text-base text-foreground">
                     Built and maintained <strong>4 comprehensive test automation frameworks</strong> covering:
                   </p>
-                  <ul className="space-y-2 mt-2 text-foreground">
+                  <ul className="space-y-2 mt-2 text-base text-foreground">
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0 mt-2"></div>
                       <span><strong>E2E Framework</strong> - Isolated Docker environments validating inter-service workflows and database state</span>
@@ -605,7 +605,7 @@ export default function Home() {
                 
                 <div>
                   <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">Impact</h4>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 text-base">
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
                       <span className="text-foreground"><strong>1200+ automated test scenarios</strong> across 4 comprehensive test suites validating API, UI, E2E, and component layers</span>
@@ -672,21 +672,21 @@ export default function Home() {
               <div className="space-y-4 mb-6">
                 <div>
                   <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">The Challenge</h4>
-                  <p className="text-foreground">
+                  <p className="text-base text-foreground">
                     Manual test case creation consuming 40% of QA time, plus constant maintenance overhead from UI/API changes causing brittle tests.
                   </p>
                 </div>
                 
                 <div>
                   <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">The Solution</h4>
-                  <p className="text-foreground">
+                  <p className="text-base text-foreground">
                     Integrated GitHub Copilot and custom AI workflows for intelligent test generation from requirements, self-healing test scripts, and automated Gherkin scenario creation from Jira tickets.
                   </p>
                 </div>
                 
                 <div>
                   <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">Impact</h4>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 text-base">
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="w-5 h-5 text-violet-500 flex-shrink-0 mt-0.5" />
                       <span className="text-foreground"><strong>60% reduction</strong> in test creation time through AI-generated test scenarios</span>
@@ -742,21 +742,21 @@ export default function Home() {
               <div className="space-y-4 mb-6">
                 <div>
                   <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">The Challenge</h4>
-                  <p className="text-foreground">
+                  <p className="text-base text-foreground">
                     Maintaining and expanding existing test automation for an enterprise desktop application while supporting 15+ releases with comprehensive test coverage and continuous quality improvements.
                   </p>
                 </div>
                 
                 <div>
                   <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">The Solution</h4>
-                  <p className="text-foreground">
+                  <p className="text-base text-foreground">
                     Enhanced and expanded desktop test automation automating both application workflows and external integrations (Excel operations). Participated in all Scrum events, creating comprehensive test strategies and plans. Handled complete testing lifecycle from test creation to execution during PBI & SIT testing.
                   </p>
                 </div>
                 
                 <div>
                   <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">Impact</h4>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 text-base">
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
                       <span className="text-foreground"><strong>150+ test cases automated</strong> covering desktop application and external integrations</span>
