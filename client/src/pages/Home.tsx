@@ -70,7 +70,7 @@ function ExperienceSection({ fadeInUp }: { fadeInUp: any }) {
             company: "Tata Consultancy Services",
             logo: "T",
             designation: "IT Analyst",
-            period: "Jun 2014 - Sep 2016",
+            period: "Jun 2014 - Dec 2020",
             color: "from-orange-500 to-red-500",
           },
         ].map((exp, index) => (
