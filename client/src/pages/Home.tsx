@@ -531,7 +531,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.1 }}
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
@@ -550,7 +550,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.2, delay: 0.1 }}
             className="relative overflow-hidden bg-gradient-to-br from-blue-500/10 via-cyan-500/5 to-transparent border border-blue-500/20 rounded-2xl p-8 hover:border-blue-500/40 transition-all group"
           >
             <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-30 transition-opacity">
@@ -649,7 +649,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.2, delay: 0.2 }}
             className="relative overflow-hidden bg-gradient-to-br from-violet-500/10 via-purple-500/5 to-transparent border border-violet-500/20 rounded-2xl p-8 hover:border-violet-500/40 transition-all group"
           >
             <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-30 transition-opacity">
@@ -719,7 +719,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.2, delay: 0.2 }}
             className="relative overflow-hidden bg-gradient-to-br from-orange-500/10 via-amber-500/5 to-transparent border border-orange-500/20 rounded-2xl p-8 hover:border-orange-500/40 transition-all group"
           >
             <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-30 transition-opacity">
@@ -792,7 +792,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.2, delay: 0.2 }}
           className="mt-12 grid md:grid-cols-4 gap-4"
         >
           <div className="p-4 bg-muted/30 border border-white/10 rounded-xl text-center">
