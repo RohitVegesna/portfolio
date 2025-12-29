@@ -4,12 +4,23 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-50% - 12px));
+    transform: translateX(calc((-300px - 24px) * 6));
+  }
+}
+
+@media (min-width: 768px) {
+  @keyframes scroll-testimonials {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc((-400px - 24px) * 6));
+    }
   }
 }
 
 .animate-scroll-testimonials {
-  animation: scroll-testimonials 40s linear infinite;
+  animation: scroll-testimonials 60s linear infinite;
 }
 
 .pause-animation:hover {
