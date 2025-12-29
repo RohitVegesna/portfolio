@@ -11,11 +11,18 @@
 @layer utilities {
   .animate-scroll-testimonials {
     display: flex !important;
-    animation: scroll-testimonials 60s linear infinite !important;
+    animation: scroll-testimonials 30s linear infinite !important;
     will-change: transform;
   }
 
   .animate-scroll-testimonials:hover {
     animation-play-state: paused !important;
+  }
+  
+  /* Faster on mobile */
+  @media (min-width: 768px) {
+    .animate-scroll-testimonials {
+      animation-duration: 50s !important;
+    }
   }
 }
