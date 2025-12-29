@@ -1,18 +1,21 @@
 /* Testimonials auto-scroll animation */
-@keyframes scroll-testimonials {
-  0% {
-    transform: translateX(0);
+@layer utilities {
+  @keyframes scroll-testimonials {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
-  100% {
-    transform: translateX(-50%);
+
+  .animate-scroll-testimonials {
+    display: flex !important;
+    animation: scroll-testimonials 60s linear infinite !important;
+    will-change: transform;
   }
-}
 
-.animate-scroll-testimonials {
-  animation: scroll-testimonials 60s linear infinite;
-  will-change: transform;
-}
-
-.pause-animation:hover {
-  animation-play-state: paused;
+  .animate-scroll-testimonials:hover {
+    animation-play-state: paused !important;
+  }
 }

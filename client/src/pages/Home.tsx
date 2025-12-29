@@ -1010,13 +1010,13 @@ export default function Home() {
         </div>
 
         {/* Auto-scrolling container */}
-        <div className="relative">
+        <div className="relative overflow-hidden">
           {/* Gradient fade edges */}
           <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
           
           {/* Scrolling testimonials */}
-          <div className="flex gap-6 animate-scroll-testimonials hover:pause-animation">
+          <div className="flex gap-6 animate-scroll-testimonials" style={{ display: 'flex' }}>
             {/* First set of testimonials */}
             {[
               {
