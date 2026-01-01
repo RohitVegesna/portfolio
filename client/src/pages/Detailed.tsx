@@ -26,6 +26,8 @@ import {
   Check,
   BarChart3,
   TrendingUp,
+  Linkedin,
+  Eye,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -1515,36 +1517,68 @@ public async Task<int> DoConcurrentGetApiCalls(string requestResource, int paral
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-6 bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-display font-bold mb-8 bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent">
             Let's Connect
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
-            Open to exciting opportunities and collaborations in test automation and quality assurance.
+            Open to exciting opportunities, collaborations, and discussions
+            about test automation, quality assurance, and building robust
+            distributed systems.
           </p>
 
-          <div className="flex flex-col items-center gap-6 mb-12">
+          <div className="flex flex-col items-center gap-6 mb-16">
             <a
               href="mailto:rohitkumar.vegesna@outlook.com"
-              className="inline-flex items-center gap-3 text-lg font-medium text-primary hover:text-primary/80 transition-all border-b-2 border-primary/30 hover:border-primary pb-1 group"
+              className="inline-flex items-center gap-3 text-lg font-medium text-primary hover:text-primary/80 transition-all border-b-2 border-primary/30 hover:border-primary pb-1 group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded px-2 py-1"
+              aria-label="Send email to Rohit Vegesna"
             >
               <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
               rohitkumar.vegesna@outlook.com
             </a>
 
             <a
+              href="https://www.linkedin.com/in/rohitvegesna/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 text-lg font-medium text-primary hover:text-primary/80 transition-all border-b-2 border-primary/30 hover:border-primary pb-1 group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded px-2 py-1"
+              aria-label="Visit LinkedIn profile (opens in new tab)"
+            >
+              <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              linkedin.com/in/rohitvegesna
+            </a>
+
+            <a
               href={resumePdf}
               download="Rohit_Vegesna_Resume.pdf"
-              className="inline-flex items-center gap-3 min-h-[48px] px-8 py-3 text-lg font-medium text-primary bg-primary/10 hover:bg-primary hover:text-primary-foreground transition-all border-2 border-primary/30 hover:border-primary rounded-full shadow-lg hover:shadow-primary/25 hover:scale-105"
+              className="inline-flex items-center gap-3 min-h-[48px] px-8 py-3 text-lg font-medium text-primary bg-primary/10 hover:bg-primary hover:text-primary-foreground transition-all border-2 border-primary/30 hover:border-primary rounded-full shadow-lg hover:shadow-primary/25 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
+              aria-label="Download resume PDF"
             >
               <Download className="w-5 h-5" />
               Download Resume
             </a>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-white/5 text-sm text-muted-foreground">
+          <div className="mt-20 pt-8 border-t border-white/5 text-sm text-muted-foreground space-y-3">
             <p>
               © {new Date().getFullYear()} Rohit Vegesna. Built with React,
               TypeScript & Tailwind CSS.
+            </p>
+            <p className="flex items-center justify-center gap-2 text-xs">
+              <Sparkles className="w-3.5 h-3.5 text-primary/70" />
+              <span>
+                Crafted with <span className="text-foreground font-medium">human creativity & vision</span>,{" "}
+                powered by <span className="text-primary font-medium">GitHub Copilot</span> for flawless execution
+              </span>
+              <Sparkles className="w-3.5 h-3.5 text-primary/70" />
+            </p>
+            <p className="mt-6">
+              <a
+                href="/"
+                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors underline-offset-4 hover:underline"
+              >
+                <Eye className="w-4 h-4" />
+                Back to Home Page
+              </a>
             </p>
           </div>
         </motion.div>
