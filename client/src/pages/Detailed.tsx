@@ -25,90 +25,62 @@ import { Badge } from "@/components/ui/badge";
 import resumePdf from "@assets/ROHIT_VEGESNA_Resume_v3_1766689085122.pdf";
 import { useState, useEffect } from "react";
 
-function DetailedNavbar({ activeSection, scrollToSection, showScrollTop, scrollToTop }: {
+function DetailedNavbar({ activeSection, scrollToSection, isSticky }: {
   activeSection: string;
   scrollToSection: (id: string) => void;
-  showScrollTop: boolean;
-  scrollToTop: () => void;
+  isSticky: boolean;
 }) {
   const links = [
     { id: "ai-testing", label: "AI Testing", icon: Sparkles },
     { id: "foundation", label: "Multi-Layer", icon: TestTube2 },
-    { id: "microservices", label: "Microservices", icon: Network },
+    { id: "microservices", label: "Distributed Systems", icon: Network },
     { id: "shift-left", label: "Shift-Left", icon: CheckCircle2 },
-    { id: "test-strategy", label: "Strategy", icon: Target },
+    { id: "test-strategy", label: "Test Strategy", icon: Target },
   ];
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4"
-    >
-      <div className="glass rounded-full px-4 md:px-6 py-3 flex items-center gap-3 md:gap-6 shadow-xl shadow-primary/10 bg-background/80 backdrop-blur-xl border border-white/20 overflow-x-auto scrollbar-hide max-w-full">
-        <a
-          href="/"
-          className="text-sm font-medium text-muted-foreground hover:text-primary transition-all hover:scale-110 flex items-center gap-2 flex-shrink-0"
-        >
-          <ArrowUp className="w-4 h-4 rotate-[-90deg]" />
-          <span className="hidden sm:inline">Home</span>
-        </a>
-
-        <div className="w-px h-6 bg-white/20 flex-shrink-0" />
-
-        {links.map((link) => {
-          const Icon = link.icon;
-          const isActive = activeSection === link.id;
-          
-          return (
-            <button
-              key={link.id}
-              onClick={() => scrollToSection(link.id)}
-              className={`text-sm font-medium transition-all hover:scale-110 flex items-center gap-2 group cursor-pointer flex-shrink-0 ${
-                isActive
-                  ? "text-primary"
-                  : "text-muted-foreground hover:text-primary"
-              }`}
-            >
-              <Icon
-                className={`w-4 h-4 transition-all group-hover:rotate-12 ${
-                  isActive ? "text-primary" : "group-hover:text-primary"
+    <div className={`${isSticky ? 'fixed top-0 left-0 right-0' : 'relative'} z-50 transition-all duration-300 ease-in-out`}>
+      <motion.nav
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="flex justify-center py-4 px-4"
+      >
+        <div className={`glass rounded-full px-4 md:px-6 py-3 flex items-center gap-3 md:gap-6 shadow-xl shadow-primary/10 bg-background/80 backdrop-blur-xl border border-white/20 overflow-x-auto scrollbar-hide max-w-full transition-all duration-300 ${
+          isSticky ? 'shadow-2xl scale-100' : 'shadow-xl scale-100'
+        }`}>
+          {links.map((link) => {
+            const Icon = link.icon;
+            const isActive = activeSection === link.id;
+            
+            return (
+              <button
+                key={link.id}
+                onClick={() => scrollToSection(link.id)}
+                className={`text-sm font-medium transition-all hover:scale-110 flex items-center gap-2 group cursor-pointer flex-shrink-0 ${
+                  isActive
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-primary"
                 }`}
-              />
-              <span className="hidden md:inline">{link.label}</span>
-            </button>
-          );
-        })}
-
-        <div className="w-px h-6 bg-white/20 flex-shrink-0" />
-        
-        <button
-          onClick={scrollToTop}
-          disabled={!showScrollTop}
-          className={`text-sm font-medium transition-all flex items-center gap-2 group flex-shrink-0 ${
-            showScrollTop
-              ? "text-muted-foreground hover:text-primary hover:scale-110 cursor-pointer"
-              : "text-muted-foreground/30 cursor-default"
-          }`}
-          aria-label="Scroll to top"
-        >
-          <ArrowUp
-            className={`w-4 h-4 transition-all ${
-              showScrollTop
-                ? "group-hover:text-primary group-hover:-translate-y-1"
-                : ""
-            }`}
-          />
-          <span className="hidden sm:inline">Top</span>
-        </button>
-      </div>
-    </motion.nav>
+              >
+                <Icon
+                  className={`w-4 h-4 transition-all group-hover:rotate-12 ${
+                    isActive ? "text-primary" : "group-hover:text-primary"
+                  }`}
+                />
+                <span className="hidden md:inline">{link.label}</span>
+              </button>
+            );
+          })}
+        </div>
+      </motion.nav>
+    </div>
   );
 }
 
 export default function Detailed() {
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [activeSection, setActiveSection] = useState("ai-testing");
+  const [isNavSticky, setIsNavSticky] = useState(false);
 
   useEffect(() => {
     let rafId: number;
@@ -116,6 +88,9 @@ export default function Detailed() {
       if (rafId) cancelAnimationFrame(rafId);
       rafId = requestAnimationFrame(() => {
         setShowBackToTop(window.scrollY > 500);
+        
+        // Make navbar sticky after scrolling past the header (approximately 400px)
+        setIsNavSticky(window.scrollY > 400);
 
         // Update active section based on scroll position
         const sections = ["ai-testing", "foundation", "microservices", "shift-left", "test-strategy"];
@@ -139,7 +114,11 @@ export default function Detailed() {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ 
+      top: 0, 
+      left: 0,
+      behavior: "smooth" 
+    });
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -162,15 +141,30 @@ export default function Detailed() {
   return (
     <div
       id="main"
-      className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans selection:bg-primary selection:text-primary-foreground pt-20"
+      className="min-h-screen bg-background text-foreground overflow-x-hidden font-sans selection:bg-primary selection:text-primary-foreground"
     >
-      {/* Floating Navbar */}
-      <DetailedNavbar 
-        activeSection={activeSection}
-        scrollToSection={scrollToSection}
-        showScrollTop={showBackToTop}
-        scrollToTop={scrollToTop}
-      />
+      {/* Info Banner */}
+      <div className="bg-gradient-to-r from-primary/10 via-purple-500/10 to-blue-500/10 border-b border-primary/20">
+        <div className="container mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
+          <div className="flex items-center gap-2">
+            <BookOpen className="w-4 h-4 text-primary" />
+            <span className="text-muted-foreground">
+              <span className="hidden sm:inline">Detailed technical documentation on Testing & Automation. </span>
+              Looking for a quick overview?{" "}
+              <a href="/" className="text-primary hover:text-primary/80 underline font-medium">
+                Visit homepage
+              </a>
+            </span>
+          </div>
+          <a
+            href="/"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-primary hover:text-primary-foreground bg-primary/10 hover:bg-primary rounded-full transition-colors border border-primary/30"
+          >
+            <ArrowUp className="w-3 h-3 rotate-[-90deg]" />
+            Back to Home
+          </a>
+        </div>
+      </div>
 
       {/* Page Header */}
       <section className="py-16 container mx-auto px-4">
@@ -189,23 +183,28 @@ export default function Detailed() {
               Testing & Automation
             </span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-4">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Deep dive into my comprehensive testing expertise spanning AI-powered automation, 
             multi-layer frameworks, distributed systems, and shift-left strategies
           </p>
-          <a
-            href="/"
-            className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
-          >
-            <ArrowUp className="w-3 h-3 rotate-[-90deg]" />
-            Back to homepage for quick overview
-          </a>
         </motion.div>
       </section>
 
+      {/* Floating/Sticky Navigation */}
+      <div className="relative">
+        {/* Placeholder to prevent content jump when navbar becomes fixed */}
+        {isNavSticky && <div className="h-[76px]" />}
+        
+        <DetailedNavbar 
+          activeSection={activeSection}
+          scrollToSection={scrollToSection}
+          isSticky={isNavSticky}
+        />
+      </div>
+
       {/* Main Content - Centered */}
       <div className="container mx-auto px-4 pb-16">
-        <main className="max-w-6xl mx-auto space-y-20">
+        <main className="max-w-7xl mx-auto space-y-20">
             {/* AI-Powered Testing Section */}
             <section id="ai-testing" className="scroll-mt-24">
               <div className="bg-gradient-to-br from-violet-500/5 to-purple-500/5 border border-violet-500/20 rounded-2xl p-8 md:p-12">
@@ -364,7 +363,7 @@ export default function Detailed() {
                     <TestTube2 className="w-8 h-8 text-blue-500" />
                   </div>
                   <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">
-                    Foundation: Multi-Layer Testing
+                    Multi-Layer Testing
                   </h2>
                 </div>
                 

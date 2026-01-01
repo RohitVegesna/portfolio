@@ -293,7 +293,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-2xl md:text-3xl lg:text-4xl font-medium text-primary/90 mb-4">
-              Senior QA Automation Developer
+              Senior QA Automation Engineer
             </p>
             <div className="max-w-4xl mx-auto mb-10 space-y-4">
               <p className="text-xl md:text-2xl text-foreground font-semibold leading-relaxed">
