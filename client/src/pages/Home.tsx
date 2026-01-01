@@ -297,7 +297,7 @@ export default function Home() {
             </p>
             <div className="max-w-4xl mx-auto mb-10 space-y-4">
               <p className="text-xl md:text-2xl text-foreground font-semibold leading-relaxed">
-                I architect test automation that catches bugs before deployment
+                Architecting reliable test automation for enterprise systems
               </p>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                 Specializing in comprehensive test frameworks for distributed microservices • AI-powered automation reducing manual effort by 60%
@@ -1210,6 +1210,15 @@ export default function Home() {
                 powered by <span className="text-primary font-medium">GitHub Copilot</span> for flawless execution
               </span>
               <Sparkles className="w-3.5 h-3.5 text-primary/70" />
+            </p>
+            <p className="mt-6">
+              <a
+                href="/detailed"
+                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors underline-offset-4 hover:underline"
+              >
+                <Eye className="w-4 h-4" />
+                View Detailed Technical Portfolio
+              </a>
             </p>
           </div>
         </motion.div>

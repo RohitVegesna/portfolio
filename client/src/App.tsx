@@ -5,12 +5,14 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
+import Detailed from "@/pages/Detailed";
 import { Analytics } from "@vercel/analytics/react";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/detailed" component={Detailed} />
       <Route component={NotFound} />
     </Switch>
   );
