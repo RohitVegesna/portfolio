@@ -229,48 +229,47 @@ export default function Home() {
         {/* Floating Icons Animation */}
         <div className="absolute inset-0 z-5 pointer-events-none overflow-hidden">
           {[
-            { Icon: TestTube2, delay: 0, x: "8%", y: "12%", floatX: 20, floatY: 15, mobile: true },
-            { Icon: Code2, delay: 0.2, x: "88%", y: "18%", floatX: -15, floatY: 20, mobile: true },
-            { Icon: Database, delay: 0.4, x: "12%", y: "78%", floatX: 18, floatY: -12, mobile: true },
-            { Icon: GitBranch, delay: 0.6, x: "90%", y: "72%", floatX: -20, floatY: 18, mobile: true },
-            { Icon: Cpu, delay: 0.8, x: "5%", y: "42%", floatX: 15, floatY: -18, mobile: false },
-            { Icon: Network, delay: 1, x: "93%", y: "48%", floatX: -18, floatY: 15, mobile: false },
-            { Icon: Container, delay: 0.3, x: "22%", y: "8%", floatX: -12, floatY: 20, mobile: false },
-            { Icon: Workflow, delay: 0.5, x: "78%", y: "88%", floatX: 16, floatY: -15, mobile: true },
-            { Icon: Shield, delay: 0.7, x: "10%", y: "58%", floatX: -15, floatY: 12, mobile: false },
-            { Icon: Zap, delay: 0.9, x: "85%", y: "32%", floatX: 12, floatY: -20, mobile: false },
-            { Icon: Layers, delay: 1.1, x: "6%", y: "25%", floatX: 14, floatY: 16, mobile: false },
-            { Icon: CheckCircle2, delay: 0.4, x: "92%", y: "10%", floatX: -13, floatY: 17, mobile: false },
-            { Icon: Target, delay: 0.8, x: "15%", y: "90%", floatX: 17, floatY: -14, mobile: true },
-            { Icon: Brain, delay: 1.2, x: "82%", y: "82%", floatX: -16, floatY: 13, mobile: false },
-            { Icon: Globe, delay: 0.6, x: "8%", y: "72%", floatX: 19, floatY: -16, mobile: false },
-            { Icon: Layout, delay: 1.0, x: "95%", y: "62%", floatX: -14, floatY: 19, mobile: false },
-            { Icon: Sparkles, delay: 0.5, x: "18%", y: "5%", floatX: -18, floatY: 14, mobile: true },
-            { Icon: BookOpen, delay: 0.9, x: "80%", y: "6%", floatX: 15, floatY: -17, mobile: false },
-          ].map(({ Icon, delay, x, y, floatX, floatY, mobile }, index) => (
+            { Icon: TestTube2, delay: 0, x: "8%", y: "12%", floatY: 12, mobile: true },
+            { Icon: Code2, delay: 0.2, x: "88%", y: "18%", floatY: 15, mobile: true },
+            { Icon: Database, delay: 0.4, x: "12%", y: "78%", floatY: -10, mobile: true },
+            { Icon: GitBranch, delay: 0.6, x: "90%", y: "72%", floatY: 14, mobile: true },
+            { Icon: Cpu, delay: 0.8, x: "5%", y: "42%", floatY: -12, mobile: false },
+            { Icon: Network, delay: 1, x: "93%", y: "48%", floatY: 11, mobile: false },
+            { Icon: Container, delay: 0.3, x: "22%", y: "8%", floatY: 15, mobile: false },
+            { Icon: Workflow, delay: 0.5, x: "78%", y: "88%", floatY: -11, mobile: true },
+            { Icon: Shield, delay: 0.7, x: "10%", y: "58%", floatY: 10, mobile: false },
+            { Icon: Zap, delay: 0.9, x: "85%", y: "32%", floatY: -14, mobile: false },
+            { Icon: Layers, delay: 1.1, x: "6%", y: "25%", floatY: 13, mobile: false },
+            { Icon: CheckCircle2, delay: 0.4, x: "92%", y: "10%", floatY: 12, mobile: false },
+            { Icon: Target, delay: 0.8, x: "15%", y: "90%", floatY: -11, mobile: true },
+            { Icon: Brain, delay: 1.2, x: "82%", y: "82%", floatY: 10, mobile: false },
+            { Icon: Globe, delay: 0.6, x: "8%", y: "72%", floatY: -12, mobile: false },
+            { Icon: Layout, delay: 1.0, x: "95%", y: "62%", floatY: 14, mobile: false },
+            { Icon: Sparkles, delay: 0.5, x: "18%", y: "5%", floatY: 11, mobile: true },
+            { Icon: BookOpen, delay: 0.9, x: "80%", y: "6%", floatY: -13, mobile: false },
+          ].map(({ Icon, delay, x, y, floatY, mobile }, index) => (
             <motion.div
               key={index}
-              className={`absolute text-primary/40 transition-opacity duration-500 ${mobile ? '' : 'opacity-0 md:opacity-100'}`}
+              className={`absolute text-primary/30 transition-opacity duration-500 ${mobile ? '' : 'opacity-0 md:opacity-100'}`}
               style={{ left: x, top: y }}
               initial={{
                 opacity: 0,
-                scale: 0,
+                y: 0,
+                scale: 1,
               }}
               animate={{
-                opacity: [0, 1, 1, 0.8, 0],
-                scale: [0, 1, 1, 0.9, 0],
-                x: [0, floatX, -floatX * 0.5, floatX * 0.7, 0],
-                y: [0, floatY, -floatY * 0.6, floatY * 0.8, 0],
+                opacity: [0.3, 0.6, 0.5, 0.6, 0.3],
+                y: [0, floatY, floatY * -0.5, floatY, 0],
+                scale: [1, 1.05, 0.98, 1.03, 1],
               }}
               transition={{
-                duration: 8 + index * 0.5,
+                duration: 10 + index * 0.3,
                 delay: delay,
                 repeat: Infinity,
-                repeatDelay: 2,
                 ease: "easeInOut",
               }}
             >
-              <Icon className="w-5 h-5 md:w-8 md:h-8" />
+              <Icon className="w-6 h-6 md:w-8 md:h-8" />
             </motion.div>
           ))}
         </div>
