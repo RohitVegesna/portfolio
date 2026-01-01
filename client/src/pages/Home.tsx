@@ -30,6 +30,8 @@ import {
   Wrench,
   Award,
   Quote,
+  GraduationCap,
+  ExternalLink,
 } from "lucide-react";
 import heroBg from "@assets/generated_images/modern_tech_gradient_abstract_background.png";
 import { Badge } from "@/components/ui/badge";
@@ -112,6 +114,57 @@ function ExperienceSection({ fadeInUp }: { fadeInUp: any }) {
           </motion.div>
         ))}
       </div>
+
+      {/* Certifications */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="mt-16 max-w-5xl mx-auto"
+      >
+        <h3 className="text-2xl md:text-3xl font-display font-bold mb-8 flex items-center gap-4 justify-center">
+          <GraduationCap className="w-8 h-8 text-primary" />
+          Certifications
+        </h3>
+        <div className="grid md:grid-cols-2 gap-6 justify-items-center">
+          {[
+            {
+              name: "Professional Scrum Master I",
+              issuer: "Scrum.org",
+              icon: "PSM",
+              color: "from-blue-500 to-cyan-500",
+            },
+            {
+              name: "Microsoft Certified: Azure Fundamentals",
+              issuer: "Microsoft",
+              icon: "AZ",
+              color: "from-cyan-500 to-blue-500",
+            },
+          ].map((cert, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="flex items-center gap-4 p-6 border border-white/10 rounded-xl hover:bg-muted/5 hover:border-primary/30 transition-all w-full max-w-md group"
+            >
+              <div
+                className={`w-16 h-16 rounded-xl bg-gradient-to-br ${cert.color} flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform`}
+              >
+                <span className="text-xl font-bold text-white">{cert.icon}</span>
+              </div>
+              <div className="flex-1">
+                <h4 className="text-base font-bold text-foreground mb-1">
+                  {cert.name}
+                </h4>
+                <p className="text-sm text-muted-foreground">{cert.issuer}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 }
@@ -994,18 +1047,28 @@ export default function Home() {
       {/* Testimonials Section - Auto-scrolling */}
       <section className="py-20 bg-muted/5 border-y border-white/5 overflow-hidden">
         <div className="container mx-auto px-4 mb-12">
-          <motion.h2
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-display font-bold text-center mb-4"
+            className="text-center mb-6"
           >
-            What People Say
-          </motion.h2>
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto">
-            Recommendations from colleagues and leaders I've worked with
-          </p>
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 flex items-center gap-4 justify-center">
+              <span className="w-16 h-[2px] bg-gradient-to-r from-transparent to-primary"></span>
+              What Colleagues Say
+              <span className="w-16 h-[2px] bg-gradient-to-l from-transparent to-primary"></span>
+            </h2>
+            <a
+              href="https://www.linkedin.com/in/rohitvegesna/details/recommendations/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors underline-offset-4 hover:underline"
+            >
+              <Linkedin className="w-4 h-4" />
+              View all recommendations on LinkedIn
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          </motion.div>
         </div>
 
         {/* Auto-scrolling container */}
