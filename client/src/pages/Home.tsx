@@ -352,7 +352,7 @@ export default function Home() {
                 Architecting reliable test automation for enterprise systems
               </p>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                Specializing in comprehensive test frameworks for distributed microservices • AI-powered automation reducing manual effort by 60%
+                End-to-end test automation across API, UI (Desktop & Web), and distributed microservices • AI-powered solutions reducing manual effort by 60%
               </p>
             </div>
 
