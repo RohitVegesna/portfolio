@@ -1002,7 +1002,7 @@ export default function Detailed() {
                             </li>
                             <li className="flex items-start gap-2">
                               <CheckCircle2 className="w-4 h-4 text-indigo-500 flex-shrink-0 mt-0.5" />
-                              <span><strong>Event-Driven:</strong> Pub/sub pattern for microservices validation</span>
+                              <span><strong>Dispose Pattern:</strong> Proper resource cleanup with IDisposable</span>
                             </li>
                           </ul>
                         </div>
@@ -1145,13 +1145,13 @@ public async Task<int> DoConcurrentGetApiCalls(string requestResource, int paral
                             </li>
                             <li className="flex items-start gap-2">
                               <CheckCircle2 className="w-4 h-4 text-indigo-500 flex-shrink-0 mt-0.5" />
-                              <span><strong>Timeout Handling:</strong> Per-request timeout for reliability</span>
+                              <span><strong>Dependency Injection:</strong> Optional client wrapper for flexibility</span>
                             </li>
                           </ul>
                         </div>
 
                         <div className="bg-background/50 border border-white/10 rounded-xl p-6">
-                          <h4 className="text-base font-semibold text-foreground mb-3">Use Cases</h4>
+                          <h4 className="text-base font-semibold text-foreground mb-3">Testing Scenarios</h4>
                           <ul className="space-y-2 text-sm text-muted-foreground">
                             <li className="flex items-start gap-2">
                               <CheckCircle2 className="w-4 h-4 text-indigo-500 flex-shrink-0 mt-0.5" />
