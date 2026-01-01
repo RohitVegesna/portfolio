@@ -660,7 +660,7 @@ export default function Home() {
                   <h3 className="text-2xl font-bold text-foreground mb-2">
                     AI-Assisted Test Generation & Maintenance
                   </h3>
-                  <p className="text-sm text-violet-500 font-medium">Innovation Initiative • 2023 - Present</p>
+                  <p className="text-sm text-violet-500 font-medium">Innovation Initiative • 2025 - Present</p>
                 </div>
               </div>
               
