@@ -347,7 +347,7 @@ export default function Detailed() {
                     </div>
                     <ul className="space-y-2 text-sm text-muted-foreground">
                       <li>• GitHub Copilot for code generation</li>
-                      <li>• ChatGPT/Claude for test planning</li>
+                      <li>• Claude for test planning</li>
                       <li>• Custom ML models for analysis</li>
                       <li>• OpenAI API integrations</li>
                     </ul>
