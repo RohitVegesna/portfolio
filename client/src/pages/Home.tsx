@@ -807,6 +807,40 @@ export default function Home() {
             <div className="text-sm text-muted-foreground">Pre-Merge Coverage</div>
           </div>
         </motion.div>
+
+        {/* Deep Dive CTA - Compact Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3, delay: 0.3 }}
+          className="mt-12"
+        >
+          <div className="border border-primary/20 rounded-xl p-4 md:p-6 bg-background/50 hover:border-primary/40 transition-all">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-3 text-left">
+                <div className="p-2 bg-primary/10 rounded-lg flex-shrink-0">
+                  <BookOpen className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-base md:text-lg font-semibold text-foreground">
+                    Want to see the technical deep-dive?
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Explore code examples, architecture details, and framework metrics
+                  </p>
+                </div>
+              </div>
+              <a
+                href="/detailed"
+                className="inline-flex items-center gap-2 px-6 py-2.5 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all hover:scale-105 text-sm font-medium whitespace-nowrap flex-shrink-0"
+              >
+                View Details
+                <ArrowUp className="w-4 h-4 rotate-90" />
+              </a>
+            </div>
+          </div>
+        </motion.div>
       </div>
       
       </div></TabsContent>
