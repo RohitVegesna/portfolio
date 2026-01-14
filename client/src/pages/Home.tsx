@@ -201,33 +201,23 @@ export default function Home() {
 
   const coreTools = [
     { name: "C#" },
-    { name: ".NET 8.0 / 9.0" },
-    { name: "TypeScript / JavaScript" },
+    { name: ".NET" },
+    { name: "TypeScript" },
     { name: "PowerShell" },
-    { name: "Bash" },
-    { name: "YAML" },
-    { name: "XML" },
   ];
 
   const testingFrameworks = [
-    { name: "xUnit" },
-    { name: "NUnit" },
-    { name: "MS Test" },
-    { name: "SpecFlow" },
-    { name: "Reqnroll" },
-    { name: "Cucumber" },
-    { name: "Gherkin" },
+    { name: "xUnit / NUnit" },
+    { name: "SpecFlow (BDD/Gherkin)" },
     { name: "NSubstitute" },
     { name: "FluentAssertions" },
-    { name: "xRetry" },
   ];
 
   const automationTools = [
     { name: "Selenium WebDriver" },
     { name: "Cypress" },
     { name: "RestSharp" },
-    { name: "Postman" },
-    { name: "Win UI Automation" },
+    { name: "WinForms UI Automation" },
     { name: "JMeter" },
   ];
 
@@ -241,21 +231,14 @@ export default function Home() {
   const cicdTools = [
     { name: "GitHub Actions" },
     { name: "CircleCI" },
-    { name: "Azure DevOps" },
-    { name: "TeamCity" },
     { name: "Docker / Compose" },
     { name: "Kubernetes" },
     { name: "Argo CD" },
+    { name: "NATS JetStream" },
   ];
 
   const platforms = [
-    { name: "Visual Studio" },
-    { name: "VS Code" },
-    { name: "Git" },
     { name: "Jira / Xray" },
-    { name: "Confluence" },
-    { name: "SonarQube" },
-    { name: "Log4Net" },
   ];
 
   return (
@@ -337,7 +320,7 @@ export default function Home() {
               id="hero-title"
               className="text-xl md:text-2xl font-medium text-primary mb-4 tracking-widest uppercase"
             >
-              Test Craftsman & Quality Architect
+              Full-Stack Test Automation Expert
             </h2>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 tracking-tight">
               <span className="bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent">
@@ -347,12 +330,9 @@ export default function Home() {
             <p className="text-2xl md:text-3xl lg:text-4xl font-medium text-primary/90 mb-4">
               Senior QA Automation Engineer
             </p>
-            <div className="max-w-4xl mx-auto mb-10 space-y-4">
-              <p className="text-xl md:text-2xl text-foreground font-semibold leading-relaxed">
-                Architecting reliable test automation for enterprise systems
-              </p>
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                End-to-end test automation across API, UI (Desktop & Web), and distributed microservices • AI-powered solutions reducing manual effort by 60%
+            <div className="max-w-4xl mx-auto mb-10">
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                End-to-end automation across API, UI (Web & Desktop), and microservices
               </p>
             </div>
 
@@ -870,8 +850,8 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center p-4 bg-primary/5 border border-primary/20 rounded-xl"
             >
-              <div className="text-3xl font-bold text-primary mb-1">40+</div>
-              <div className="text-sm text-muted-foreground">Technologies</div>
+              <div className="text-3xl font-bold text-primary mb-1">25</div>
+              <div className="text-sm text-muted-foreground">Core Technologies</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -880,7 +860,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center p-4 bg-primary/5 border border-primary/20 rounded-xl"
             >
-              <div className="text-3xl font-bold text-primary mb-1">10</div>
+              <div className="text-3xl font-bold text-primary mb-1">4</div>
               <div className="text-sm text-muted-foreground">
                 Test Frameworks
               </div>
@@ -902,8 +882,8 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center p-4 bg-primary/5 border border-primary/20 rounded-xl"
             >
-              <div className="text-3xl font-bold text-primary mb-1">8</div>
-              <div className="text-sm text-muted-foreground">CI/CD Tools</div>
+              <div className="text-3xl font-bold text-primary mb-1">6</div>
+              <div className="text-sm text-muted-foreground">CI/CD & Infrastructure</div>
             </motion.div>
           </div>
 
@@ -980,7 +960,7 @@ export default function Home() {
           <div className="mb-16">
             <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
               <span className="w-1.5 h-10 bg-gradient-to-b from-primary to-primary/50 rounded-full"></span>
-              Databases
+              Test Data & Database Validation
             </h3>
             <motion.div
               variants={stagger}
@@ -1026,7 +1006,7 @@ export default function Home() {
           <div className="mb-12">
             <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
               <span className="w-1.5 h-10 bg-gradient-to-b from-primary to-primary/50 rounded-full"></span>
-              Development Tools & Platforms
+              Test Management & Reporting
             </h3>
             <motion.div
               variants={stagger}
@@ -1263,15 +1243,6 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col items-center gap-6 mb-16">
-            <a
-              href="mailto:rohitkumar.vegesna@outlook.com"
-              className="inline-flex items-center gap-3 text-lg font-medium text-primary hover:text-primary/80 transition-all border-b-2 border-primary/30 hover:border-primary pb-1 group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded px-2 py-1"
-              aria-label="Send email to Rohit Vegesna"
-            >
-              <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              rohitkumar.vegesna@outlook.com
-            </a>
-
             <a
               href="https://www.linkedin.com/in/rohitvegesna/"
               target="_blank"
