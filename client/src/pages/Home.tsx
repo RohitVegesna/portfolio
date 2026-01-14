@@ -412,9 +412,9 @@ export default function Home() {
                 icon: Network,
               },
               {
-                title: "Shift-Left",
-                subtitle: "Champion",
-                desc: "Pre-merge validation & pipeline integration",
+                title: "90%+",
+                subtitle: "Pre-Merge Coverage",
+                desc: "Shift-left approach with pipeline integration",
                 icon: GitBranch,
               },
             ].map((stat, i) => (
